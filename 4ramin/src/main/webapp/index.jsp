@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-1234
-허재철 깃 테스트
-허재철 집에서 테스트
+<jsp:forward page="home.do"/>
 </body>
 </html>
