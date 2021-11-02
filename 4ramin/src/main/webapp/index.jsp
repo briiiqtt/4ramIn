@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-시험
+시험1
 </body>
 </html>
