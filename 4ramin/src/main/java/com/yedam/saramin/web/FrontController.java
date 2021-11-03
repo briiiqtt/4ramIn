@@ -84,22 +84,6 @@ public class FrontController extends HttpServlet {
 			else
 				viewPage = viewPage + ".tiles" ;
 		}
-
-		Command command = map.get(page);
-		String viewPage = command.run(request, response);
-
-		if (viewPage != null && !viewPage.endsWith(".do")) {
-			if (viewPage.startsWith("ajax:")) {
-				response.setContentType("text/html; charset=utg-8");
-				response.getWriter().append(viewPage.substring(5));
-				return;
-			}
-			if (viewPage.endsWith(".jsp")) {
-				viewPage = "WEB-INF/views" + viewPage;
-			} else {
-				viewPage = viewPage + ".tiles";
-			}
-		}
     
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		System.out.println(viewPage);
