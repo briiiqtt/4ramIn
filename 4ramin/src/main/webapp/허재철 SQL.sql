@@ -1,3 +1,7 @@
+-------------------------유저생성-------------------------
+-- db.properties를 하나 박아놓고 같이 쓰려면 접속 유저 네임이랑 비번이 같아야되서 만들었어요
+-- cmd -> sqlplus "/as sysdba" -> create user yedam identified by 1234 ; -> grant connect , resource to yedam ;
+
 -------------------------테이블삭제-------------------------
 
 drop table company ;
