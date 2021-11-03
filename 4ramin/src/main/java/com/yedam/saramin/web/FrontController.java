@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.yedam.saramin.comm.Command;
+import com.yedam.saramin.command.AdtSelectAll;
 import com.yedam.saramin.command.HomeCommand;
 import com.yedam.saramin.command.UsersJoin;
 import com.yedam.saramin.command.UsersJoinForm;
@@ -29,7 +30,9 @@ public class FrontController extends HttpServlet {
 		map.put("/home.do", new HomeCommand());
 		map.put("/UsersJoinForm.do", new UsersJoinForm()); //회원가입 폼
 		map.put("/UsersJoin.do", new UsersJoin()); //회원가입 처리
-		
+		map.put("/adtSelectAll.do", new AdtSelectAll());
+
+	
 	}
 
 	
@@ -58,6 +61,7 @@ public class FrontController extends HttpServlet {
 		}
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
+		System.out.println(viewPage);
 		dispatcher.forward(request, response);
 	}
 
