@@ -16,8 +16,8 @@
     </environment>
   </environments>
   <mappers>
-    <mapper resource="" />
     <!-- 창인씨 여기 매퍼 등록해서 쓰시면 됩니다 -->
-    <mapper resource="" />
+    <!-- 허재철 매퍼 -->
+    <mapper resource="com/yedam/saramin/company/service/company-map.xml" />
   </mappers>
 </configuration>
