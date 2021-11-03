@@ -13,28 +13,50 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.yedam.saramin.comm.Command;
 import com.yedam.saramin.command.HomeCommand;
+import com.yedam.saramin.command.UsersJoin;
+import com.yedam.saramin.command.UsersJoinForm;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	HashMap<String, Command> map = new HashMap<String, Command>();
-       
-    public FrontController() {
-        super();
-    }
+
+	public FrontController() {
+		super();
+	}
 
 	public void init(ServletConfig config) throws ServletException {
 		map.put("/home.do", new HomeCommand());
+		map.put("/UsersJoinForm.do", new UsersJoinForm()); //회원가입 폼
+		map.put("/UsersJoin.do", new UsersJoin()); //회원가입 처리
+		
 	}
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+	
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String uri = request.getRequestURI();
 		String contextPath = request.getContextPath();
 		String page = uri.substring(contextPath.length());
+
 		Command command = map.get(page);
 		String viewPage = command.run(request, response);
-		viewPage = viewPage + ".tiles";
+
+		if (viewPage != null && !viewPage.endsWith(".do")) {
+			if (viewPage.startsWith("ajax:")) {
+				response.setContentType("text/html; charset=utg-8");
+				response.getWriter().append(viewPage.substring(5));
+				return;
+			}
+			if (viewPage.endsWith(".jsp")) {
+				viewPage = "WEB-INF/views" + viewPage;
+			} else {
+				viewPage = viewPage + ".tiles";
+			}
+		}
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);
 	}
