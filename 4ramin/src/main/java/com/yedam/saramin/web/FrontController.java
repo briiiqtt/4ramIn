@@ -12,6 +12,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.yedam.saramin.comm.Command;
+import com.yedam.saramin.command.CompanyJoin;
+import com.yedam.saramin.command.CompanyJoinForm;
+import com.yedam.saramin.command.CompanyLogin;
+import com.yedam.saramin.command.CompanySelect;
+import com.yedam.saramin.command.CompanyUpdate;
+import com.yedam.saramin.command.CompanyUpdateForm;
+import com.yedam.saramin.command.HomeCommand;
+import com.yedam.saramin.command.LoginForm;
 import com.yedam.saramin.command.AdtSelectAll;
 import com.yedam.saramin.command.HomeCommand;
 import com.yedam.saramin.command.UsersJoin;
@@ -27,12 +35,29 @@ public class FrontController extends HttpServlet {
 	}
 
 	public void init(ServletConfig config) throws ServletException {
+		// 범수씨 테스트용
 		map.put("/home.do", new HomeCommand());
+		// 창인씨 command
 		map.put("/UsersJoinForm.do", new UsersJoinForm()); //회원가입 폼
 		map.put("/UsersJoin.do", new UsersJoin()); //회원가입 처리
 		map.put("/adtSelectAll.do", new AdtSelectAll());
-
-	
+		// 허재철 command
+		map.put("/loginForm.do", new LoginForm()) ; // 로그인 폼 호출
+		map.put("/companyLogin.do", new CompanyLogin()) ; // 기업 로그인 처리
+		map.put("/companyJoinForm.do", new CompanyJoinForm()) ; // 기업 회원가입 폼 호출 (테스트끝)
+		map.put("/companyJoin.do", new CompanyJoin()) ; // 기업 회원가입 처리 (테스트끝)
+		map.put("/companySelect.do", new CompanySelect()) ; // 기업 정보 조회 (테스트끝)
+		map.put("/companyUpdateForm.do", new CompanyUpdateForm()) ; // 기업 정보 수정 폼 호출
+		map.put("/companyUpdate.do", new CompanyUpdate()) ; // 기업 정보 수정 처리
+		// 기업 회원 탈퇴 폼 호출
+		// 기업 회원 탈퇴 (관리자가 탈퇴시키는것도 이걸로 같이)
+		
+		// 검색에서 뷰 만들어서 where에 산업분야, 기업위치, 
+		
+		// 산업분야 검색 ( where산업분야 회사id출력 )
+		// 채용공고 폼 호출
+		// 채용공고 출력
+		// 기업평가 출력
 	}
 
 	
@@ -43,6 +68,22 @@ public class FrontController extends HttpServlet {
 		String uri = request.getRequestURI();
 		String contextPath = request.getContextPath();
 		String page = uri.substring(contextPath.length());
+    
+		Command command = map.get(page);
+		String viewPage = command.run(request, response);
+		
+		if (viewPage != null && !viewPage.endsWith(".do")) {
+			if (viewPage.startsWith("ajax:")) {
+				response.setContentType("text/plain; charset=UTF-8") ;
+				response.getWriter().append(viewPage.substring(5)) ;
+				return ;
+			}
+			
+			if (viewPage.endsWith(".jsp"))
+				viewPage = "WEB-INF/views/" + viewPage ;
+			else
+				viewPage = viewPage + ".tiles" ;
+		}
 
 		Command command = map.get(page);
 		String viewPage = command.run(request, response);
@@ -59,7 +100,7 @@ public class FrontController extends HttpServlet {
 				viewPage = viewPage + ".tiles";
 			}
 		}
-
+    
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		System.out.println(viewPage);
 		dispatcher.forward(request, response);
