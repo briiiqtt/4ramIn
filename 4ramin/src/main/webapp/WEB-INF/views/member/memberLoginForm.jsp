@@ -59,7 +59,7 @@
 									class="btn px-4 btn-primary text-white">
 							</div>
 						</div>
-
+						
 					</form>
 				</div>
 				<div class="col-lg-6">
@@ -102,10 +102,11 @@
             <p class="mb-0 text-white lead">고객의 시간 확보를 방해합니다.</p>
           </div>
           <div class="col-md-3 ml-auto">
-            <a href="resisterForm.do" class="btn btn-warning btn-block btn-lg">가입하기 !</a>
+            <a href="UsersJoinForm.do" class="btn btn-warning btn-block btn-lg">가입하기 !</a>
           </div>
         </div>
       </div>
+      
     </section>
 
 	<!-- SCRIPTS -->
