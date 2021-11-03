@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.yedam.saramin.comm.Command;
+import com.yedam.saramin.command.AdtSelectAll;
 import com.yedam.saramin.command.HomeCommand;
 
 @WebServlet("*.do")
@@ -25,6 +26,7 @@ public class FrontController extends HttpServlet {
 
 	public void init(ServletConfig config) throws ServletException {
 		map.put("/home.do", new HomeCommand());
+		map.put("/adtSelectAll.do", new AdtSelectAll());
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -36,6 +38,7 @@ public class FrontController extends HttpServlet {
 		String viewPage = command.run(request, response);
 		viewPage = viewPage + ".tiles";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
+		System.out.println(viewPage);
 		dispatcher.forward(request, response);
 	}
 
