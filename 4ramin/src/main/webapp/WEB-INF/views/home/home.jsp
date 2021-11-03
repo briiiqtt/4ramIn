@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>홈 중앙 섹션</title>
 </head>
 <body>
-여기 홈이다ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ
+<a href="memberLoginForm.do">테스트 로긴</a>
 </body>
 </html>

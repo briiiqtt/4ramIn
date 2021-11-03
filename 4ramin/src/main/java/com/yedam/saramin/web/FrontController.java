@@ -25,6 +25,8 @@ public class FrontController extends HttpServlet {
 
 	public void init(ServletConfig config) throws ServletException {
 		map.put("/home.do", new HomeCommand());
+		map.put("/resisterForm.do", new ResisterCommand());
+		map.put("/memberLoginForm.do", new MemberLoginCommand());
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
