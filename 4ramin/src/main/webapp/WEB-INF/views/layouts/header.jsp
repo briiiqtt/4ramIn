@@ -13,10 +13,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-7">
-					<h1 class="text-white font-weight-bold">헤더</h1>
+					<h1 class="text-white font-weight-bold">여기에바디페이지이름불러와야함</h1>
 					<div class="custom-breadcrumbs">
-						<a href="#">홈</a> <span class="mx-2 slash">/</span> <span
-							class="text-white"><strong>ㅇㅇ</strong></span>
 					</div>
 				</div>
 			</div>

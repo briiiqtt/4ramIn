@@ -20,22 +20,27 @@ import com.yedam.saramin.command.CompanyUpdate;
 import com.yedam.saramin.command.CompanyUpdateForm;
 import com.yedam.saramin.command.HomeCommand;
 import com.yedam.saramin.command.LoginForm;
+import com.yedam.saramin.command.AdtSelectAll;
+import com.yedam.saramin.command.HomeCommand;
+import com.yedam.saramin.command.UsersJoin;
+import com.yedam.saramin.command.UsersJoinForm;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	HashMap<String, Command> map = new HashMap<String, Command>();
-       
-    public FrontController() {
-        super();
-    }
+
+	public FrontController() {
+		super();
+	}
 
 	public void init(ServletConfig config) throws ServletException {
 		// 범수씨 테스트용
 		map.put("/home.do", new HomeCommand());
-		
 		// 창인씨 command
-		
+		map.put("/UsersJoinForm.do", new UsersJoinForm()); //회원가입 폼
+		map.put("/UsersJoin.do", new UsersJoin()); //회원가입 처리
+		map.put("/adtSelectAll.do", new AdtSelectAll());
 		// 허재철 command
 		map.put("/loginForm.do", new LoginForm()) ; // 로그인 폼 호출
 		map.put("/companyLogin.do", new CompanyLogin()) ; // 기업 로그인 처리
@@ -53,15 +58,17 @@ public class FrontController extends HttpServlet {
 		// 채용공고 폼 호출
 		// 채용공고 출력
 		// 기업평가 출력
-		
 	}
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+	
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String uri = request.getRequestURI();
 		String contextPath = request.getContextPath();
 		String page = uri.substring(contextPath.length());
-		
+    
 		Command command = map.get(page);
 		String viewPage = command.run(request, response);
 		
@@ -77,8 +84,25 @@ public class FrontController extends HttpServlet {
 			else
 				viewPage = viewPage + ".tiles" ;
 		}
-		
+
+		Command command = map.get(page);
+		String viewPage = command.run(request, response);
+
+		if (viewPage != null && !viewPage.endsWith(".do")) {
+			if (viewPage.startsWith("ajax:")) {
+				response.setContentType("text/html; charset=utg-8");
+				response.getWriter().append(viewPage.substring(5));
+				return;
+			}
+			if (viewPage.endsWith(".jsp")) {
+				viewPage = "WEB-INF/views" + viewPage;
+			} else {
+				viewPage = viewPage + ".tiles";
+			}
+		}
+    
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
+		System.out.println(viewPage);
 		dispatcher.forward(request, response);
 	}
 
