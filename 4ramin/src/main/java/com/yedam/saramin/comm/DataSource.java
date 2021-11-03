@@ -1,4 +1,4 @@
-package com.yedam.comm;
+package com.yedam.saramin.comm;
 
 import java.io.InputStream;
 
