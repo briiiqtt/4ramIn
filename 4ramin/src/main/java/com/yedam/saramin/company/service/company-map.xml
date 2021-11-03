@@ -15,11 +15,11 @@
 	</insert>
 
 	<delete id="deleteCompany" parameterType="com.yedam.saramin.company.service.CompanyVO">
-		delete from company where id = #{com_id}
+		delete from company where com_id = #{com_id}
 	</delete>
 
 	<update id="updateCompany" parameterType="com.yedam.saramin.company.service.CompanyVO">
-		update company set com_pw = #{com_pw}, com_intro = #{com_intro}, com_phone = #{com_phone}, com_email = #{com_email}, com_loc = {com_loc}, com_imp = {com_imp}, com_man = #{com_man}, com_sal = #{com_sal} where com_id = {com_id} 
+		update company set com_pw = #{com_pw}, com_intro = #{com_intro}, com_phone = #{com_phone}, com_email = #{com_email}, com_loc = #{com_loc}, com_imp = #{com_imp}, com_man = #{com_man}, com_sal = #{com_sal} where com_id = #{com_id} 
 	</update>
 
 </mapper>

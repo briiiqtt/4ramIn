@@ -77,6 +77,19 @@
 									<li><a href="#">이력서 관리</a></li>
 								</ul>
 							</li>
+							
+							<li class="has-children">
+								<a href="javascript:void(0)">기업페이지</a>
+								<ul class="dropdown">
+
+								<%-- myJobApplication.do --%>
+									<li><a href="companyJoinForm.do">기업회원가입(임시로여기)</a></li>
+									<li><a href="companySelectList.do">기업목록</a></li>
+									<li><a href="companySelect.do">기업상세페이지(아직로그인없이안됨)</a></li>
+									<li><a href="companyUpdateForm.do">기업회원정보수정</a></li>
+									<li><a href="companyDeleteForm.do">기업회원탈퇴</a></li>
+								</ul>
+							</li>
 							<li class="d-lg-none"><a href="loginForm.do">로그인</a></li>
 							<li class="d-lg-none"><a href="logout.do">로그아웃</a></li>
 						</ul>

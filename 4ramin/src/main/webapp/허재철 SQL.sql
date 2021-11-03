@@ -24,9 +24,9 @@ com_phone varchar2(20) ,               -- 기업 전화번호
 com_email varchar2(100) ,              -- 기업 대표 이메일
 com_loc varchar2(300) ,                -- 기업 위치
 com_reg varchar2(20) ,                 -- 기업 사업자 번호
-com_imp varchar2(10) ,                 -- 기업 직원수
+com_imp varchar2(100) ,                 -- 기업 직원수
 com_man varchar2(10) ,                 -- 기업 인사 담당자명
-com_sal varchar2(20)                   -- 기업 신입 평균 연봉
+com_sal varchar2(100)                   -- 기업 신입 평균 연봉
 ) ;
 
 -- 기업 샘플 데이터 --
