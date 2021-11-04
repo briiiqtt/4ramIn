@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,8 +18,8 @@
 				</div>
 
 				<ul class="job-listings mb-5">
-
-
+				
+				<c:forEach items="${adoptions }" var="adt">
 					<li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
 						<a href="#"></a>
 						<!--여기에 공고 링크-->
@@ -29,8 +30,8 @@
 
 						<div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
 							<div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
-								<h2>제목</h2>
-								<strong>부제</strong>
+								<h2>${adt.title }</h2>
+								<strong>${adt.body }</strong>
 							</div>
 							<div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
 								<span class="icon-room"></span> 위치
@@ -41,7 +42,9 @@
 								<span class="badge badge-secondary">신입/경력</span>
 							</div>
 						</div>
-
+						</li>
+						</c:forEach>
+	
 
 
 				</ul>

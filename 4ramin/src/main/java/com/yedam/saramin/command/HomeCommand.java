@@ -9,7 +9,7 @@ public class HomeCommand implements Command {
 
 	@Override
 	public String run(HttpServletRequest request, HttpServletResponse response) {
-		return "home/home";
+		return "home/main.jsp";
 	}
 
 }
