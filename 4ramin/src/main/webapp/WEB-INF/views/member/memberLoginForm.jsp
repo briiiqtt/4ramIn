@@ -29,26 +29,26 @@
 			<div class="row">
 				<div class="col-lg-6 mb-5">
 					<h2 class="mb-4">사업자 회원전용 로그인</h2>
-					<form action="#" class="p-4 border rounded">
+					<form action="companyLogin.do" class="p-4 border rounded">
 
 						<div class="row form-group">
 							<div class="col-md-12 mb-3 mb-md-0">
 								<label class="text-black" for="fname">아이디</label> <input
-									type="text" id="fname" class="form-control"
+									type="text" id="com_id" name="com_id" class="form-control"
 									placeholder="businessperson - ID">
 							</div>
 						</div>
 						<div class="row form-group">
 							<div class="col-md-12 mb-3 mb-md-0">
 								<label class="text-black" for="fname">비밀번호</label> <input
-									type="password" id="fname" class="form-control"
+									type="password" id="com_pw" name="com_pw" class="form-control"
 									placeholder="Password">
 							</div>
 						</div>
 						<div class="row form-group mb-4">
 							<div class="col-md-12 mb-3 mb-md-0">
 								<label class="text-black" for="fname">사업자 번호</label> <input
-									type="password" id="fname" class="form-control"
+									type="password" id="com_reg" name="com_reg" class="form-control"
 									placeholder="businessperson - number">
 							</div>
 						</div>

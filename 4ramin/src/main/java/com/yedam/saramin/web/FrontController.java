@@ -18,6 +18,7 @@ import com.yedam.saramin.command.CompanyDeleteForm;
 import com.yedam.saramin.command.CompanyJoin;
 import com.yedam.saramin.command.CompanyJoinForm;
 import com.yedam.saramin.command.CompanyLogin;
+import com.yedam.saramin.command.CompanyMyInfo;
 import com.yedam.saramin.command.CompanySelect;
 import com.yedam.saramin.command.CompanySelectList;
 import com.yedam.saramin.command.CompanyUpdate;
@@ -50,6 +51,7 @@ public class FrontController extends HttpServlet {
 		map.put("/companyJoin.do", new CompanyJoin()) ; // 기업 회원가입 처리 (테스트끝)
 		map.put("/companySelectList.do", new CompanySelectList()) ; // 기업 전체목록 조회 (테스트끝)
 		map.put("/companySelect.do", new CompanySelect()) ; // 기업 상세 정보 조회 (테스트끝)
+		map.put("/companyMyInfo.do", new CompanyMyInfo()) ; // 기업 내 정보 보기 (테스트끝)
 		map.put("/companyUpdateForm.do", new CompanyUpdateForm()) ; // 기업 정보 수정 폼 호출 (테스트끝)
 		map.put("/companyUpdate.do", new CompanyUpdate()) ; // 기업 정보 수정 처리 (테스트끝)
 		map.put("/companyDeleteForm.do", new CompanyDeleteForm()) ; // 기업 회원 탈퇴 폼 호출 (테스트끝)

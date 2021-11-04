@@ -36,14 +36,14 @@ public class CompanyUpdate implements Command {
 			
 			if (n != 0) {
 				request.setAttribute("message", "정보가 수정되었습니다") ;
-				viewPage = "companySelect.do" ;
+				viewPage = "companyMyInfo.do" ;
 			} else {
 				request.setAttribute("message", "정보가 수정되지 않았습니다") ;
-				viewPage = "companySelect.do" ;
+				viewPage = "companyMyInfo.do" ;
 			}
 		} else {
 			request.setAttribute("message", "해당회사나 관리자만 수정할 수 있습니다") ;
-			viewPage = "home.do" ;
+			viewPage = "company/companyUpdateForm" ;
 		}
 		
 		return viewPage ;

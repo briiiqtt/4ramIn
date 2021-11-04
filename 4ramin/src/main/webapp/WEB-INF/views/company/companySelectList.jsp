@@ -6,37 +6,55 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+    <link rel="stylesheet" href="css/custom-bs.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="fonts/line-icons/style.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/quill.snow.css">
 </head>
 <body>
-	<table border="1">
-		<tr>
-			<th>아이디</th>
-			<th>비밀번호</th>
-			<th>기업명</th>
-			<th>기업소개</th>
-			<th>전화번호</th>
-			<th>이메일</th>
-			<th>위치</th>
-			<th>사업자번호</th>
-			<th>직원수</th>
-			<th>담당자</th>
-			<th>신입초봉</th>
-		</tr>
+<div align="center">
+<br>
+<div class="col-12 text-center" data-aos="fade">
+  <h2 class="section-title mb-3">등록 기업 목록</h2>
+</div>
+<div>
+<section class="site-section services-section bg-light block__62849" id="next-section">
+      <div class="container">        
+        <div class="row">
 		<c:forEach items="${companies }" var="company">
-			<tr>
-				<td>${company.com_id }</td>
-				<td>${company.com_pw }</td>
-				<td>${company.com_name }</td>
-				<td>${company.com_intro }</td>
-				<td>${company.com_phone }</td>
-				<td>${company.com_email }</td>
-				<td>${company.com_loc }</td>
-				<td>${company.com_reg }</td>
-				<td>${company.com_imp }</td>
-				<td>${company.com_man }</td>
-				<td>${company.com_sal }</td>
-			</tr>
+          <div class="col-6 col-md-6 col-lg-4 mb-4 mb-lg-5">
+            <a href="companySelect.do?com_id=${company.com_id }" class="block__16443 text-center d-block">
+              <span class="custom-icon mx-auto"><span class="icon-magnet d-block"></span></span>
+              <h3>${company.com_name }</h3>
+              <p>${company.com_intro }</p>      
+            </a>
+          </div>
 		</c:forEach>
-	</table>
+        </div>
+      </div>
+    </section>
+</div>
+</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/stickyfill.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/quill.min.js"></script>
+    
+    
+    <script src="js/bootstrap-select.min.js"></script>
+    
+    <script src="js/custom.js"></script>
 </body>
 </html>

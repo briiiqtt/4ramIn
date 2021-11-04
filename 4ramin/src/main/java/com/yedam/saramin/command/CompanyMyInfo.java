@@ -9,31 +9,19 @@ import com.yedam.saramin.company.service.CompanyService;
 import com.yedam.saramin.company.service.CompanyVO;
 import com.yedam.saramin.company.serviceImpl.CompanyServiceImpl;
 
-public class CompanyLogin implements Command {
+public class CompanyMyInfo implements Command {
 
 	@Override
 	public String run(HttpServletRequest request, HttpServletResponse response) {
-		// 기업 로그인 처리
+		// 기업이 내정보 보기
 		HttpSession session = request.getSession() ;
 		CompanyService companyDao = new CompanyServiceImpl() ;
 		CompanyVO vo = new CompanyVO() ;
-		
-		vo.setCom_id(request.getParameter("com_id")) ;
-		vo.setCom_pw(request.getParameter("com_pw")) ;
-		vo.setCom_reg(request.getParameter("com_reg")) ;
+		vo.setCom_id(String.valueOf(session.getAttribute("id"))) ;
 		vo = companyDao.selectCompany(vo) ;
-		String viewPage = null ;
+		request.setAttribute("company", vo) ;
 		
-		if(vo != null) {
-			session.setAttribute("id", vo.getCom_id()) ;
-			session.setAttribute("name", vo.getCom_name()) ;
-			session.setAttribute("com_reg", vo.getCom_reg()) ;
-			viewPage = "main.do" ;
-		} else {
-			viewPage = "loginForm.do" ;
-		}
-		
-		return viewPage ;
+		return "company/companySelect" ;
 	}
 
 }

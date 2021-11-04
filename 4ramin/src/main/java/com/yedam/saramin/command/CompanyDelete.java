@@ -25,14 +25,14 @@ public class CompanyDelete implements Command {
 			int n = companyDao.deleteCompany(vo) ;
 			
 			if (n != 0) {
-				viewPage = "home.do" ;
+				viewPage = "main.do" ;
 			} else {
 				request.setAttribute("message", "정상적으로 탈퇴가 되지 않았습니다)") ;
 				viewPage = "company/companyDeleteForm" ;
 			}
 		} else {
 			request.setAttribute("message", "해당회사나 관리자만 수정할 수 있습니다") ;
-			viewPage = "home.do" ;
+			viewPage = "company/companyDeleteForm" ;
 		}
 		
 		return viewPage ;
