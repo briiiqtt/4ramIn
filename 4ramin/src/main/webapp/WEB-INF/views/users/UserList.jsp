@@ -106,59 +106,81 @@ to {
 			<div>
 				<table id="myBtn">
 					<tr align="center">
-						<th width="200">아이디</th>
-						<th width="200">비밀벙호</th>
-						<th width="200">이름</th>
+						<th width="100">아이디</th>
+						<th width="100">비밀벙호</th>
+						<th width="100">이름</th>
 						<th width="200">연락처</th>
 						<th width="200">이메일</th>
 						<th width="200">권한</th>
 					</tr>
 
 					<!-- td 어디를 누르든 모달이 열리면서 , 누른 id값을 상세보기 한다 -->
-					<c:forEach items="${users }" var="users">
+					<c:forEach items="${users }" var="user">
 						<tr onmouseover='this.style.background="#fcecae";'
 							onmouseleave='this.style.background="#FFFFFF";'
-							onclick="ModalDelivery(${users.user_id})">
-							<td align="center">${users.user_id }</td>
-							<td align="center">${users.user_password }</td>
-							<td align="center">${users.user_name }</td>
-							<td align="center">${users.user_phone }</td>
-							<td align="center">${users.user_email }</td>
-							<td align="center">${users.user_auth }</td>
+							onclick="ModalDelivery('${user.user_id}')">
+							<td align="center">${user.user_id }</td>
+							<td align="center">${user.user_password }</td>
+							<td align="center">${user.user_name }</td>
+							<td align="center">${user.user_phone }</td>
+							<td align="center">${user.user_email }</td>
+							<td align="center">${user.user_auth }</td>
 						</tr>
-
 					</c:forEach>
 				</table>
+			</div><br>
+			<div>
+				<form id="frm" action="UserOne.do" method="post">
+					<input type="hidden" id="uid" name="uid">
+				</form>
 			</div>
-
 		</div>
 	</div>
 	<!-- The Modal -->
 	<div id="myModal" class="modal">
 
-		<!-- Modal content -->
+		<!-- 모달을 클릭이벤트로 열면 그 클린한 ID 값을 기준으로 단건검색할계획 -->
 		<div class="modal-content">
 			<div class="modal-header">
 				<span class="close"></span>
 				<h4>회원상세보기</h4>
 			</div>
-			<div class="modal-body" id="list">
-				<form id="frm" action="UserOne.do" method="post">
-				<p>test</p>
-					<input type="hidden" id="uid" name="uid">
+			<div class="modal-body">
+				<form action="">
+					<div>
+						<table border="1">
+							<tr align="center">
+								<th width="200">아이디</th>
+								<th width="200">비밀벙호</th>
+								<th width="200">이름</th>
+								<th width="200">연락처</th>
+								<th width="200">이메일</th>
+								<th width="200">권한</th>
+							</tr>
+							<tr>
+								<td align="center">${userone.user_id }</td>
+								<td align="center">${userone.user_password }</td>
+								<td align="center">${userone.user_name }</td>
+								<td align="center">${userone.user_phone }</td>
+								<td align="center">${userone.user_email }</td>
+								<td align="center">${userone.user_auth }</td>
+							</tr>
+						</table>
+					</div>
 				</form>
 			</div>
 			<div class="modal-footer">
 				<h3>Modal Footer</h3>
 			</div>
 		</div>
-
 	</div>
 	<script>
-	//id값으로 단건출력
+	//ModalDelivery 에 담긴값을 가져와서 frm.uid 한테 값을 넘기고,전송한다
 	function ModalDelivery(v) {
+		console.log(v);
 		frm.uid.value = v;
 		frm.submit();
+		
 	}
 	
 	
