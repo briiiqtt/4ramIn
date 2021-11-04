@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.yedam.saramin.comm.Command;
-import com.yedam.saramin.command.AdtSelectAll;
 import com.yedam.saramin.command.CompanyDelete;
 import com.yedam.saramin.command.CompanyDeleteForm;
 import com.yedam.saramin.command.CompanyJoin;
@@ -28,9 +27,10 @@ import com.yedam.saramin.command.LoginForm;
 import com.yedam.saramin.command.UserList;
 import com.yedam.saramin.command.UsersJoin;
 import com.yedam.saramin.command.UsersJoinForm;
-import com.yedam.saramin.resume.ResumeForm;
 import com.yedam.saramin.command.adt.AdtInsertForm;
 import com.yedam.saramin.command.adt.AdtSelectAll;
+import com.yedam.saramin.resume.ResumeForm;
+import com.yedam.saramin.resume.ResumeUpdate;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -69,6 +69,7 @@ public class FrontController extends HttpServlet {
 		map.put("/companyUpdateForm.do", new CompanyUpdateForm()) ; // 기업 정보 수정 폼 호출
 		map.put("/companyUpdate.do", new CompanyUpdate()) ; // 기업 정보 수정 처리
 		map.put("/resumeForm.do", new ResumeForm());
+		map.put("/resumeUpdate.do", new ResumeUpdate());
 	}
 
 	
