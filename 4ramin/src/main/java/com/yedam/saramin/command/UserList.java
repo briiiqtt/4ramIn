@@ -15,7 +15,6 @@ public class UserList implements Command {
 		UsersService usersDao = new UsersServiceImpl();
 		request.setAttribute("users", usersDao.usersSelectList());
 		
-		System.out.println(usersDao.usersSelectList());
 		return "users/UserList";
 	}
 
