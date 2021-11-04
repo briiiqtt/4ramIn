@@ -1,3 +1,4 @@
+
 -------------------- 유저 테이블 ---------------------------------
 CREATE TABLE users (					-- 유저 회원가입 테이블
 user_id varchar2(20)	    NOT NULL,   -- 아아디
@@ -8,7 +9,6 @@ user_email varchar2(200)   	NULL,		-- 이메일
 user_auth varchar2(50)	NULL			-- 권한
 );
 
-
 select * from users;
 
 insert into users values('yedam','1234','관리자','01012341235','yedam@naver.com','ADMIN'); -- 어드민 하나만 해놓음..
@@ -18,6 +18,7 @@ insert into users values('AAC','1234','Mason Bray','(963)748-2553','lacus@conval
 insert into users values('AAD','1234','Forrest Chapman','(606) 543-6276','purus@orciluctus.com','USER');
 insert into users values('ABA','1234','Anthony','088-151-1151','ulum@mauris.co.uk','USER');
 insert into users values('ACA','1234','Neville','014-659-6256','dolor@mlesuada.co.uk','USER');
+
 
 
 ----------------------이력서 테이블---------------------------------------

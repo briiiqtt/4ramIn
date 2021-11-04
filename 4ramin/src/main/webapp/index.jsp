@@ -92,6 +92,7 @@
 								<span class="mr-2 icon-add"></span>회원가입</a>
 							<a href="loginForm.do" class="btn btn-primary border-width-2 d-none d-lg-inline-block">
 								<span class="mr-2 icon-lock_outline"></span>로그인</a>
+								
 							<%-- </c:if> --%>
 							<c:if test="${not empty sessionScope.userId}">
 							<a href="javascript:void(0)"

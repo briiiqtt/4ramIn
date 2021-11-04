@@ -39,6 +39,7 @@ public class FrontController extends HttpServlet {
 		// 창인씨 command
 		map.put("/UsersJoinForm.do", new UsersJoinForm()); //회원가입 폼
 		map.put("/UsersJoin.do", new UsersJoin()); //회원가입 처리
+		
 		map.put("/adtSelectAll.do", new AdtSelectAll());
 		// 허재철 command
 		map.put("/loginForm.do", new LoginForm()) ; // 로그인 폼 호출
