@@ -151,7 +151,7 @@
           <div class="col-lg-4 ml-auto">
             <div class="row">
               <div class="col-6">
-                <a href="home.do" class="btn btn-block btn-light btn-md"><span class="icon-open_in_new mr-2"></span>홈으로</a>
+                <a href="main.do" class="btn btn-block btn-light btn-md"><span class="icon-open_in_new mr-2"></span>홈으로</a>
               </div>
               <div class="col-6">
                 <button onclick="companyJoin()" class="btn btn-block btn-primary btn-md">가입하기</button>

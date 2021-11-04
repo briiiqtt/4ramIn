@@ -12,6 +12,40 @@
     <link rel="stylesheet" href="fonts/line-icons/style.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
+    
+    <script src="js/jquery.min.js"></script>
+    
+    <script type="text/javascript">
+    
+    	function likeplus() {   
+    		var com_id = $("#com_id").val() ;
+    		$.ajax({
+    			url : "companyLike.do?com_id=" + com_id ,
+    			type : "get" ,
+    			data : {
+    				com_id : com_id
+    			} ,    			
+    			success : function() {
+    				likeview() 
+    			}    			
+    		}) 
+    	}
+    	
+    	function likeview() {
+    		var com_id = $("#com_id").val() ;
+    		$.ajax({
+    			url : "companyLikeSelect.do?com_id=" + com_id ,
+    			type : "get" ,
+    			data : {
+    				com_id : com_id
+    			} ,
+    			success : function(result) {
+    				$("#like").html("<span class='icon-heart-o mr-2 text-danger'></span>좋아요 : " + result) ;
+    			}
+    		}) 
+    	}
+    	
+    </script>
 </head>
 <body>
   <section class="site-section">
@@ -33,7 +67,7 @@
                 <a href="#" class="btn btn-block btn-light btn-md">즐겨찾기 추가</a>
               </div>
               <div class="col-6">
-                <a href="#" class="btn btn-block btn-primary btn-md"><span class="icon-heart-o mr-2 text-danger"></span>좋아요</a>
+                <a onclick="likeplus()" href="javascript:void(0)" id="like" class="btn btn-block btn-primary btn-md"><span class="icon-heart-o mr-2 text-danger"></span>좋아요 : ${company.com_like }</a>
               </div>
             </div>
           </div>
@@ -74,9 +108,9 @@
           </div>
         </div>
       </div>
+      <input type="hidden" id="com_id" name="com_id" value="${company.com_id }">
     </section>
-    
-    <script src="js/jquery.min.js"></script>
+   
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/isotope.pkgd.min.js"></script>
     <script src="js/stickyfill.min.js"></script>
