@@ -73,8 +73,8 @@
 								<ul class="dropdown">
 
 								<%-- myJobApplication.do --%>
-									<li><a href="myJobApplication.do">내 이력서</a></li>
-									<li><a href="#">이력서 관리</a></li>
+									<li><a href="resumeForm.do">내 이력서</a></li>
+									<li><a href="resumeUpdate.do">이력서 관리</a></li>
 								</ul>
 							</li>
 							<li class="d-lg-none"><a href="loginForm.do">로그인</a></li>
