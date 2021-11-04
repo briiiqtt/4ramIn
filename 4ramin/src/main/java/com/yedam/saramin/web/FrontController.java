@@ -22,6 +22,7 @@ import com.yedam.saramin.command.HomeCommand;
 import com.yedam.saramin.command.LoginForm;
 import com.yedam.saramin.command.UsersJoin;
 import com.yedam.saramin.command.UsersJoinForm;
+import com.yedam.saramin.resume.ResumeForm;
 import com.yedam.saramin.command.adt.AdtInsertForm;
 import com.yedam.saramin.command.adt.AdtSelectAll;
 
@@ -52,6 +53,7 @@ public class FrontController extends HttpServlet {
 		map.put("/companySelect.do", new CompanySelect()) ; // 기업 정보 조회 (테스트끝)
 		map.put("/companyUpdateForm.do", new CompanyUpdateForm()) ; // 기업 정보 수정 폼 호출
 		map.put("/companyUpdate.do", new CompanyUpdate()) ; // 기업 정보 수정 처리
+		map.put("/resumeForm.do", new ResumeForm());
 		// 기업 회원 탈퇴 폼 호출
 		// 기업 회원 탈퇴 (관리자가 탈퇴시키는것도 이걸로 같이)
 		
