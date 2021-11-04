@@ -8,4 +8,5 @@ public interface CompanyService {
 	int insertCompany(CompanyVO vo) ;
 	int updateCompany(CompanyVO vo) ;
 	int deleteCompany(CompanyVO vo) ;
+	int likeCompany(CompanyVO vo) ;
 }

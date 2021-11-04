@@ -17,13 +17,15 @@ public class CompanyDelete implements Command {
 		CompanyService companyDao = new CompanyServiceImpl() ;
 		CompanyVO vo = new CompanyVO() ;
 		vo.setCom_id(request.getParameter("com_id")) ;
+		vo.setCom_pw(request.getParameter("com_pw")) ;
+		vo.setCom_reg(request.getParameter("com_reg")) ;
 		
 		String id = String.valueOf(session.getAttribute("id")) ;
 		String viewPage = null ;
 		
 		if (id.equals(request.getParameter("com_id")) || id.equals("admin")) {
 			int n = companyDao.deleteCompany(vo) ;
-			
+			System.out.println(n);
 			if (n != 0) {
 				viewPage = "main.do" ;
 			} else {

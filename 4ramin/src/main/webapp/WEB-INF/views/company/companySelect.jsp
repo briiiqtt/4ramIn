@@ -12,6 +12,23 @@
     <link rel="stylesheet" href="fonts/line-icons/style.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
+    <script type="text/javascript">
+    function like_func(l) {
+    	var com_id = "${company.com_id}" ;
+    	console.log(l) ;
+    	$.ajax({
+    		url : "companyLike.do?com_id="+com_id ,
+    		type : "get" ,
+    		success : function(result) {
+    			let like = document.getElementById("like") ;
+    			like.innerText="좋아요4 ";
+    		} ,
+    		error : function(reject) {
+    			
+    		}
+    	})
+    } ;
+    </script>
 </head>
 <body>
   <section class="site-section">
@@ -33,7 +50,7 @@
                 <a href="#" class="btn btn-block btn-light btn-md">즐겨찾기 추가</a>
               </div>
               <div class="col-6">
-                <a href="#" class="btn btn-block btn-primary btn-md"><span class="icon-heart-o mr-2 text-danger"></span>좋아요</a>
+                <a href="javascript: like_func(${company.com_like })" id="like" class="btn btn-block btn-primary btn-md"><span class="icon-heart-o mr-2 text-danger"></span>좋아요${company.com_like }</a>
               </div>
             </div>
           </div>
@@ -74,6 +91,7 @@
           </div>
         </div>
       </div>
+      <input type="hidden" name="com_id" value="${company.com_id }">
     </section>
     
     <script src="js/jquery.min.js"></script>

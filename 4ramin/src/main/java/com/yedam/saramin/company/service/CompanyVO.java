@@ -12,6 +12,7 @@ public class CompanyVO {
 	private String com_imp ;
 	private String com_man ;
 	private String com_sal ;
+	private String com_like ;
 	
 	public CompanyVO () {}
 
@@ -101,6 +102,14 @@ public class CompanyVO {
 
 	public void setCom_sal(String com_sal) {
 		this.com_sal = com_sal;
+	}
+
+	public String getCom_like() {
+		return com_like;
+	}
+
+	public void setCom_like(String com_like) {
+		this.com_like = com_like;
 	}
 	
 	

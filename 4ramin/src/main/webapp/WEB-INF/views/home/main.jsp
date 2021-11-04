@@ -75,6 +75,18 @@
 									<li><a href="#">이력서 관리</a></li>
 								</ul>
 							</li>
+							
+							<li class="has-children">
+								<a href="javascript:void(0)">기업</a>
+								<ul class="dropdown">
+
+									<li><a href="companyJoinForm.do">기업 회원가입 (임시로 여기)</a></li>
+									<li><a href="companySelectList.do">기업 목록</a></li>
+									<li><a href="companyMyInfo.do">기업 나의 정보</a></li>
+									<li><a href="companyUpdateForm.do">기업 정보 수정</a></li>
+								</ul>
+							</li>
+							
 							<li class="d-lg-none"><a href="loginForm.do">로그인</a></li>
 							<li class="d-lg-none"><a href="logout.do">로그아웃</a></li>
 						</ul>
