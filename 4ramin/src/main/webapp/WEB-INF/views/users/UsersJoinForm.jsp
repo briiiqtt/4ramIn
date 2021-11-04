@@ -1,204 +1,147 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-
-<style>
-.dropbtn {
-	background-color: #4CAF50;
-	color: white;
-	padding: 16px;
-	font-size: 16px;
-	border: none;
-	cursor: pointer;
-}
-
-.dropbtn:hover, .dropbtn:focus {
-	background-color: #3e8e41;
-}
-
-.dropdown {
-	position: relative;
-	display: inline-block;
-}
-
-.dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: #f9f9f9;
-	min-width: 160px;
-	overflow: auto;
-	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-}
-
-.dropdown-content a {
-	color: black;
-	padding: 12px 16px;
-	text-decoration: none;
-	display: block;
-}
-
-.dropdown a:hover {
-	background-color: #f1f1f1
-}
-
-.show {
-	display: block;
-}
-</style>
-
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
-<script type="text/javascript">
-	function Join() {
-		var pw = userjoin.user_password.value;
-		var pwr = userjoin.user_passwordRE.value;
-		if (userjoin.user_id.value == "") {
-			alert("아이디 를 입력해주세요")
-			userjoin.user_id.focus();
-			return false;
-		}
-		if (userjoin.user_password.value == "") {
-			alert("비밀번호 를 입력해주세요")
-			userjoin.user_password.focus();
-			return false;
-		}
-		if (userjoin.user_name.value == "") {
-			alert("이름을 입력해주세요")
-			userjoin.user_name.focus();
-			return false;
-		}
-		if (userjoin.user_phone.value == "") {
-			alert("연락처 를 입력해주세요")
-			userjoin.user_phone.focus();
-			return false;
-		}
-		if (userjoin.user_email.value == "") {
-			alert("이메일 을 입력해주세요")
-			userjoin.user_email.focus();
-			return false;
-		}
-
-		if (pw == pwr) {
-			userjoin.submit();
-		} else {
-			alert("비밀번호가 다릅니다.");
-			userjoin.user_password.value = "";
-			userjoin.user_passwordRE.value = "";
-			userjoin.user_password.focus();
-			return false;
-		}
-
-	}
-
-	/*사용자가 버튼을 클릭하면,드롭다운 콘텐츠 숨기기 및 표시 간 전환 */
-	function myFunction() {
-		document.getElementById("myDropdown").classList.toggle("show");
-		
-	}
-</script>
+    <link rel="stylesheet" href="css/custom-bs.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="fonts/line-icons/style.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/quill.snow.css">
+    <script type="text/javascript">
+      function userJoin() {
+        var pw = frm.user_password.value;
+        var pwr = frm.user_passwordRE.value;
+        if (frm.user_id.value == "") {
+          alert("아이디 를 입력해주세요")
+          frm.user_id.focus();
+          return false;
+        }
+        if (frm.user_password.value == "") {
+          alert("비밀번호 를 입력해주세요")
+          frm.user_password.focus();
+          return false;
+        }
+        if (frm.user_name.value == "") {
+          alert("이름을 입력해주세요")
+          frm.user_name.focus();
+          return false;
+        }
+        if (frm.user_phone.value == "") {
+          alert("연락처 를 입력해주세요")
+          frm.user_phone.focus();
+          return false;
+        }
+        if (frm.user_email.value == "") {
+          alert("이메일 을 입력해주세요")
+          frm.user_email.focus();
+          return false;
+        }
+    
+        if (pw == pwr) {
+        	frm.submit();
+        } else {
+          alert("비밀번호가 다릅니다.");
+          frm.user_password.value = "";
+          frm.user_passwordRE.value = "";
+          frm.user_password.focus();
+          return false;
+        }
+    
+      }
+    </script>
 </head>
 <body>
-	<div align="center">
-		<div>
-			<h1>회원가입</h1>
-		</div>
-		<div>
-			<form id="userjoin" action="UsersJoin.do" method="post">
-				<div>
-					<table>
-						<tr>
-							<th width="150">아이디</th>
-							<td width="200">
-								<!-- readonly="required" : 필수입력 --> <input type="text"
-								id="user_id" name="user_id" required="required"
-								placeholder="아이디">
-							</td>
-						</tr>
-						<tr>
-							<th width="150">비밀번호</th>
-							<td width="200"><input type="password" id="user_password"
-								name="user_password" required="required" placeholder="비밀번호"></td>
-						</tr>
-						<tr>
-							<th width="150">비밀번호 재입력</th>
-							<td width="200"><input type="password" id="user_passwordRE"
-								name="user_passwordRE" required="required"
-								placeholder="비밀번호 재입력"></td>
-						</tr>
-						<tr>
-							<th width="150">이 름</th>
-							<td width="200"><input type="text" id="user_name"
-								name="user_name"></td>
-						</tr>
-						<tr>
-							<th width="150">연락처</th>
-							<td width="200"><input type="text" id="user_phone"
-								name="user_phone"></td>
-						</tr>
-						<tr>
-							<th width="150">Email</th>
-							<td width="200"><input type="text" id="user_email"
-								name="user_email"></td>
-						</tr>
-					</table>
-				</div>
-				<br> <input type="hidden" id="user_auth" name="user_auth"
-					value="USER"> <input type="button" value="회원가입"
-					onclick="Join()">&nbsp;&nbsp;&nbsp; <input type="reset"
-					value="다시쓰기">
-			</form>
-		</div>
-	</div>
+<section class="site-section">
+      <div class="container">
 
-	<br>
-	<!-- 회원리스트 드롭다운 출력 -->
-	<div class="dropdown">
-	<input type="button" onclick="myFunction()" class="dropbtn" value="회원리스트" >
-		<<!-- button onclick="myFunction()" class="dropbtn">
-			<a href="UserList.do">회원리스트</a>
-		</button> -->
-		<div id="myDropdown" class="dropdown-content">
-			<div>
-				<form id="frm" action="" method="post">
-					<div>
-						<table>
-							<tr>
-								<th width="100">ID</th>
-								<th width="200">Name</th>
-								<th width="150">Auth</th>
-							</tr>
-							<!-- userList변수로 값을 받아와서 users 변수라는 이름으로 뿌려준다-->
-							<c:forEach items="${userList }" varStatus="users">
-								<tr>
-									<td>${users.user_id }</td>
-									<td>${users.user_name }</td>
-									<td>${users.user_autg }</td>
-								</tr>
-							</c:forEach>
-						</table>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+        <div class="row align-items-center mb-5">
+          <div class="col-lg-8 mb-4 mb-lg-0">
+            <div class="d-flex align-items-center">
+              <div>
+                <h2>개인 회원가입</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-5">
+          <div class="col-lg-12">
+            <form id="frm" class="p-4 p-md-5 border rounded">
+              
+              <br>
+              <h6 class="text-black mb-5 border-bottom pb-2">*표시는 필수입력사항입니다</h6>
+              
+              <div class="form-group">
+                <label for="email">* 아이디</label>
+                <input type="text" class="form-control" id="user_id" name="user_id" placeholder="아이디를 입력해주세요">
+              </div>
+              
+              <div class="form-group">
+                <label for="job-title">* 비밀번호</label>
+                <input type="text" class="form-control" id="user_password" name="user_password" placeholder="비밀번호를 입력해주세요">
+              </div>
 
+              <div class="form-group">
+                <label for="job-title">* 비밀번호 재입력</label>
+                <input type="text" class="form-control" id="user_passwordRE" name="user_passwordRE" placeholder="똑같이 입력해주세요">
+              </div>
+              
+              <div class="form-group">
+                <label for="job-title">* 이름</label>
+                <input type="text" class="form-control" id="user_name" name="user_name" placeholder="본인 이름을 입력주세요">
+              </div>
+              
+             
 
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+              <div class="form-group">
+                <label for="email">* 연락처</label>
+                <input type="text" class="form-control" id="user_phone" name="user_phone" placeholder=" - 없이 입력해주세요">
+              </div>
+              
+               <div class="form-group">
+                <label for="job-title">Email</label>
+                <input type="text" class="form-control" id="user_email" name="user_email" placeholder="이메일을 입력주세요">
+              </div>
+              <br>
+              <h3 class="text-black mb-5 border-bottom pb-2">4ramin 에 오신것을 환영합니다</h3>
+              
+            </form>
+          </div>
+        </div>
+        <div class="row align-items-center mb-5">
+          <div class="col-lg-4 ml-auto">
+            <div class="row">
+              <div class="col-6">
+                <a href="main.do" class="btn btn-block btn-light btn-md"><span class="icon-open_in_new mr-2"></span>홈으로</a>
+              </div>
+              <div class="col-6">
+                <button onclick="userJoin()" class="btn btn-block btn-primary btn-md">가입하기;</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/stickyfill.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/quill.min.js"></script>
 
+    <script src="js/bootstrap-select.min.js"></script>
+    
+    <script src="js/custom.js"></script>
 </body>
 </html>

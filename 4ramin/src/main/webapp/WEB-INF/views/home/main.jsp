@@ -55,7 +55,18 @@
 
 					<nav class="mx-auto site-navigation">
 						<ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
+						
+						<!-- 최창인 -->
+						<li class="has-children">
+								<a href="javascript:void(0)">유저관련</a>
+								<ul class="dropdown">
 
+									<li><a href="UsersJoinForm.do">회원가입</a></li>
+									<li><a href="UserList.do">회원목록</a></li>
+								</ul>
+							</li>
+							<!-- 최창인 End -->
+							
 							<li><a href="main.do" class="nav-link active">홈</a></li>
 
 							<li class="has-children">
@@ -84,7 +95,7 @@
 						<div class="ml-auto">
 						
 							<%-- <c:if test="${not empty sessionScope.userId}"> --%>
-							<a href="usersJoinForm.do"
+							<a href="UsersJoinForm.do"
 								class="btn btn-outline-white border-width-2 d-none d-lg-inline-block">
 								<span class="mr-2 icon-add"></span>회원가입</a>
 							<a href="loginForm.do" class="btn btn-primary border-width-2 d-none d-lg-inline-block">
