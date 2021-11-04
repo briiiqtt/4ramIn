@@ -26,4 +26,8 @@
 		update company set com_like = com_like + 1 where com_id = #{com_id}
 	</update>
 
+	<select id="selectLikeCompany" resultType="com.yedam.saramin.company.service.CompanyVO">
+		select com_like from company where com_id = #{com_id}
+	</select>
+
 </mapper>

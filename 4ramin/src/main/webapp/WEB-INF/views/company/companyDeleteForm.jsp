@@ -13,6 +13,41 @@
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" href="css/animate.min.css">
 	<link rel="stylesheet" href="css/quill.snow.css">
+	
+	<script type="text/javascript">
+		function companyDelete() {
+			var id1 = "${id}" ;
+			var id2 = $("#com_id").val() ;
+			var pw1 = "${pw}" ;
+			var pw2 = $("#com_pw").val() ;
+			var reg1 = "${com_reg}" ;
+			var reg2 = $("#com_reg").val() ;
+			
+			if ( id2 == "" || pw2 == "" || reg2 == "") {
+				alert("내용을 입력하세요") ;
+				return 
+			}
+			if ( id1 != id2 ) {
+				alert("아이디가 일치하지 않습니다")
+				frm.com_id.focus() ;
+				return
+			}
+			if ( pw1 != pw2 ) {
+				alert("비밀번호가 일치하지 않습니다")
+				frm.com_pw.focus() ;
+				return
+			}
+			if ( reg1 != reg2 ) {
+				alert("사업자 등록번호가 일치하지 않습니다")
+				frm.com_reg.focus() ;
+				return
+			}
+			
+			alert("탈퇴되었습니다") ;
+			frm.action = "companyDelete.do" ;
+			frm.submit() ;
+		}
+	</script>
 </head>
 <body>
 <section class="site-section">
@@ -20,7 +55,7 @@
 			<div class="row">
 				<div class="col-lg-6 mb-5">
 					<h2 class="mb-4">사업자 본인확인</h2>
-					<form action="companyLogin.do" class="p-4 border rounded">
+					<form id="frm" action="companyDelete.do" class="p-4 border rounded">
 
 						<div class="row form-group">
 							<div class="col-md-12 mb-3 mb-md-0">
@@ -45,7 +80,7 @@
 						</div>
 						<div class="row form-group">
 							<div class="col-md-12">
-								<button onclick="companyDelete.do" class="btn px-4 btn-primary text-white">탈퇴하기</button>									
+								<button onclick="companyDelete()" class="btn px-4 btn-primary text-white">탈퇴하기</button>									
 							</div>
 						</div>
 					</form>

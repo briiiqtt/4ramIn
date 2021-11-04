@@ -25,7 +25,6 @@ public class CompanyDelete implements Command {
 		
 		if (id.equals(request.getParameter("com_id")) || id.equals("admin")) {
 			int n = companyDao.deleteCompany(vo) ;
-			System.out.println(n);
 			if (n != 0) {
 				viewPage = "main.do" ;
 			} else {
