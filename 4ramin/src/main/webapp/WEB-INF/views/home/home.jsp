@@ -13,7 +13,7 @@
 	<div align="center">
 		<a href="UsersJoinForm.do">회원가입</a>
 	</div>
-<a href="memberLoginForm.do">테스트 로긴</a>
+<a href="Naver.html">네이버로그인</a>
 
 </body>
 </html>

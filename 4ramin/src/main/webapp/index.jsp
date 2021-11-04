@@ -55,7 +55,16 @@
 
 					<nav class="mx-auto site-navigation">
 						<ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-
+							<!-- 최창인 User 모음 -->
+							<li class="has-children">
+								<a href="javascript:void(0)">유저테이블</a>
+								<ul class="dropdown">
+									<li><a href="UsersJoinForm.do">회원가입</a></li>
+									<li><a href="UserList.do">회원리스트</a></li>
+								</ul>
+							</li>
+							<!-- 최창인 End -->
+							
 							<li><a href="home.do" class="nav-link active">홈</a></li>
 
 							<li class="has-children">
