@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.yedam.saramin.comm.Command;
-import com.yedam.saramin.command.AdtSelectAll;
 import com.yedam.saramin.command.CompanyJoin;
 import com.yedam.saramin.command.CompanyJoinForm;
 import com.yedam.saramin.command.CompanyLogin;
@@ -24,6 +23,9 @@ import com.yedam.saramin.command.LoginForm;
 import com.yedam.saramin.command.UserList;
 import com.yedam.saramin.command.UsersJoin;
 import com.yedam.saramin.command.UsersJoinForm;
+import com.yedam.saramin.resume.ResumeForm;
+import com.yedam.saramin.command.adt.AdtInsertForm;
+import com.yedam.saramin.command.adt.AdtSelectAll;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -35,8 +37,11 @@ public class FrontController extends HttpServlet {
 	}
 
 	public void init(ServletConfig config) throws ServletException {
-		// 범수씨 테스트용
-		map.put("/home.do", new HomeCommand());
+		// 김범수
+		map.put("/main.do", new HomeCommand());
+		map.put("/adtSelectAll.do", new AdtSelectAll());
+		map.put("/adtInsertForm.do", new AdtInsertForm());
+		
 		// 창인씨 command
 		map.put("/UsersJoinForm.do", new UsersJoinForm()); //회원가입 폼
 		map.put("/UsersJoin.do", new UsersJoin()); //회원가입 처리
@@ -51,6 +56,7 @@ public class FrontController extends HttpServlet {
 		map.put("/companySelect.do", new CompanySelect()) ; // 기업 정보 조회 (테스트끝)
 		map.put("/companyUpdateForm.do", new CompanyUpdateForm()) ; // 기업 정보 수정 폼 호출
 		map.put("/companyUpdate.do", new CompanyUpdate()) ; // 기업 정보 수정 처리
+		map.put("/resumeForm.do", new ResumeForm());
 		// 기업 회원 탈퇴 폼 호출
 		// 기업 회원 탈퇴 (관리자가 탈퇴시키는것도 이걸로 같이)
 		
