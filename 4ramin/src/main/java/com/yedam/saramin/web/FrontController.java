@@ -25,8 +25,12 @@ import com.yedam.saramin.command.CompanyUpdate;
 import com.yedam.saramin.command.CompanyUpdateForm;
 import com.yedam.saramin.command.HomeCommand;
 import com.yedam.saramin.command.LoginForm;
+import com.yedam.saramin.command.UserList;
 import com.yedam.saramin.command.UsersJoin;
 import com.yedam.saramin.command.UsersJoinForm;
+import com.yedam.saramin.resume.ResumeForm;
+import com.yedam.saramin.command.adt.AdtInsertForm;
+import com.yedam.saramin.command.adt.AdtSelectAll;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -38,12 +42,17 @@ public class FrontController extends HttpServlet {
 	}
 
 	public void init(ServletConfig config) throws ServletException {
-		// 범수씨 테스트용
-		map.put("/home.do", new HomeCommand());
+		// 김범수
+		map.put("/main.do", new HomeCommand());
+		map.put("/adtSelectAll.do", new AdtSelectAll());
+		map.put("/adtInsertForm.do", new AdtInsertForm());
+		
 		// 창인씨 command
 		map.put("/UsersJoinForm.do", new UsersJoinForm()); //회원가입 폼
 		map.put("/UsersJoin.do", new UsersJoin()); //회원가입 처리
-		map.put("/adtSelectAll.do", new AdtSelectAll());
+		map.put("/UserList.do", new UserList());//회원 리스트 출력
+		
+		map.put("/adtSelectAll.do", new AdtSelectAll()); // <- 누구꺼시죠..?
 		// 허재철 command
 		map.put("/loginForm.do", new LoginForm()) ; // 로그인 폼 호출
 		map.put("/companyLogin.do", new CompanyLogin()) ; // 기업 로그인 처리
@@ -56,6 +65,10 @@ public class FrontController extends HttpServlet {
 		map.put("/companyUpdate.do", new CompanyUpdate()) ; // 기업 정보 수정 처리 (테스트끝)
 		map.put("/companyDeleteForm.do", new CompanyDeleteForm()) ; // 기업 회원 탈퇴 폼 호출 (테스트끝)
 		map.put("/companyDelete.do", new CompanyDelete()) ; // 기업 회원 탈퇴 (테스트끝) (관리자가 탈퇴시키는것도 이걸로 같이)
+		map.put("/companySelect.do", new CompanySelect()) ; // 기업 정보 조회 (테스트끝)
+		map.put("/companyUpdateForm.do", new CompanyUpdateForm()) ; // 기업 정보 수정 폼 호출
+		map.put("/companyUpdate.do", new CompanyUpdate()) ; // 기업 정보 수정 처리
+		map.put("/resumeForm.do", new ResumeForm());
 	}
 
 	

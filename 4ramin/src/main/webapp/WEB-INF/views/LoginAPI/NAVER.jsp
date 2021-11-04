@@ -7,9 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div align="center">
-		<div><h1>${message }</h1></div>
-		<a href="loginForm.do"></a>
-	</div>
+
 </body>
 </html>

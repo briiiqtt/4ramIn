@@ -4,12 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>내 이력서 수정</title>
 </head>
 <body>
-	<div align="center">
-		<div><h1>${message }</h1></div>
-		<a href="loginForm.do"></a>
-	</div>
+	수정할거다ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ
 </body>
 </html>

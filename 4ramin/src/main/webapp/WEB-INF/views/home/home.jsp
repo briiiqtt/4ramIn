@@ -7,6 +7,5 @@
 <title>홈 중앙 섹션</title>
 </head>
 <body>
-
 </body>
 </html>

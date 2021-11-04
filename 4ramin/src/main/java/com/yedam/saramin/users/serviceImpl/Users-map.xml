@@ -4,7 +4,7 @@
 
 	<select id="usersSelectList"
 		resultType="com.yedam.saramin.users.service.UsersVO">
-		select * from users;
+		select * from users
 	</select>
 
 	<select id="usersSelect"
