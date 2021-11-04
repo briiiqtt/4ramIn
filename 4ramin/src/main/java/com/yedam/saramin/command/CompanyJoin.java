@@ -36,7 +36,7 @@ public class CompanyJoin implements Command {
 			viewPage = "loginForm.do" ;
 		} else {
 			request.setAttribute("message", "회원가입이 정상적으로 처리되지 않았습니다") ;
-			viewPage = "home.do" ;
+			viewPage = "company/companyJoinForm" ;
 		}
 		return viewPage ;
 	}

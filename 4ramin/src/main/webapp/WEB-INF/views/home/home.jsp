@@ -7,13 +7,5 @@
 <title>홈 중앙 섹션</title>
 </head>
 <body>
-	<div>
-		<h1>여기는 메인 홈 입니다.</h1>
-	</div>
-	<div align="center">
-		<a href="UsersJoinForm.do">회원가입</a>
-	</div>
-<a href="Naver.html">네이버로그인</a>
-
 </body>
 </html>
