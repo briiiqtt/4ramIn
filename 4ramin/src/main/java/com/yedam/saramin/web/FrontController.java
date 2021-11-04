@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.yedam.saramin.comm.Command;
-import com.yedam.saramin.command.AdtSelectAll;
 import com.yedam.saramin.command.CompanyDelete;
 import com.yedam.saramin.command.CompanyDeleteForm;
 import com.yedam.saramin.command.CompanyJoin;
@@ -28,9 +27,9 @@ import com.yedam.saramin.command.LoginForm;
 import com.yedam.saramin.command.UserList;
 import com.yedam.saramin.command.UsersJoin;
 import com.yedam.saramin.command.UsersJoinForm;
-import com.yedam.saramin.resume.ResumeForm;
 import com.yedam.saramin.command.adt.AdtInsertForm;
 import com.yedam.saramin.command.adt.AdtSelectAll;
+import com.yedam.saramin.resume.ResumeForm;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -51,8 +50,6 @@ public class FrontController extends HttpServlet {
 		map.put("/UsersJoinForm.do", new UsersJoinForm()); //회원가입 폼
 		map.put("/UsersJoin.do", new UsersJoin()); //회원가입 처리
 		map.put("/UserList.do", new UserList());//회원 리스트 출력
-		
-		map.put("/adtSelectAll.do", new AdtSelectAll()); // <- 누구꺼시죠..?
 		// 허재철 command
 		map.put("/loginForm.do", new LoginForm()) ; // 로그인 폼 호출
 		map.put("/companyLogin.do", new CompanyLogin()) ; // 기업 로그인 처리
