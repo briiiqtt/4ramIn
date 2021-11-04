@@ -21,8 +21,5 @@
 		delete from resume where rsm_id = #{rsm_id}
 	</delete>
 	
-	<update id="resumeUpdate" parameterType="">
-		update resume set 
-	</update>
 </mapper>	
 	
