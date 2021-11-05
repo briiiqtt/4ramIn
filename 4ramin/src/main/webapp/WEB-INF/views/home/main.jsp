@@ -105,14 +105,9 @@
 
 					<div class="right-cta-menu text-right d-flex aligin-items-center col-6">
 						<div class="ml-auto">
-						
-<<<<<<< HEAD
 							<c:if test="${empty id}">
-								<a href="UsersJoinForm.do"
-=======
 							<%-- <c:if test="${not empty sessionScope.userId}"> --%>
 							<a href="UsersJoinForm.do"
->>>>>>> branch 'heo3' of https://github.com/HeoJC/4ramin.git
 								class="btn btn-outline-white border-width-2 d-none d-lg-inline-block">
 								<span class="mr-2 icon-add"></span>회원가입</a>
 								<a href="loginForm.do" class="btn btn-primary border-width-2 d-none d-lg-inline-block">
