@@ -4,6 +4,7 @@ drop table company ;
 drop table branches ;
 drop table adoptions ;
 drop table reviews ;
+drop table avgsal ;
 
 drop sequence a_seq ;
 drop sequence r_seq ;
@@ -55,6 +56,26 @@ insert into company values('donga','1234','동아문화사','인쇄업','053-242
 'donga@naver.com','대구 달서구 장기로65길 11-9','890-89-89012','19명','박창용','2450만원',0) ;
 insert into company values('major','1234','애드메이저','광고 대행업','010-5730-5041',
 'admajor@naver.com','대구 동구 동부로26길 60','901-90-90123','19명','조두석','2450만원',0) ;
+
+-- 평균연봉 테이블 --
+create table avgsal (
+com_id varchar2(20) PRIMARY KEY ,
+sal_2019 varchar2(100) ,
+sal_2020 varchar2(100) ,
+sal_2021 varchar2(100) 
+);
+
+-- 평균연봉 샘플 데이터 --
+insert into avgsal values('maru','2650만원','2700만원','2760만원') ;
+insert into avgsal values('raon','2400만원','2450만원','2500만원') ;
+insert into avgsal values('simons','2450만원','2500만원','2550만원') ;
+insert into avgsal values('sias','2450만원','2500만원','2550만원') ;
+insert into avgsal values('daham','2400만원','2450만원','2500만원') ;
+insert into avgsal values('bean','2600만원','2650만원','2700만원') ;
+insert into avgsal values('sungwon','2600만원','2650만원','2700만원') ;
+insert into avgsal values('vaunce','2650만원','2700만원','2750만원') ;
+insert into avgsal values('donga','2400만원','2450만원','2450만원') ;
+insert into avgsal values('major','2450만원','2450만원','2450만원') ;
 
 -- 산업분야 테이블 --
 create table branches (
@@ -123,5 +144,6 @@ select * from company ;
 select * from branches ;
 select * from adoptions ;
 select * from reviews ;
+select * from avgsal ;
 
 commit ;

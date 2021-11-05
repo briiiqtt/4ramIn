@@ -21,6 +21,7 @@
 		var com_reg = frm.com_reg.value ;
 		var com_name = frm.com_name.value ;
 		var com_intro = frm.com_intro.value ;
+		var com_sal = frm.com_sal.value ;
 		
 		if ( com_id == "") {
 			alert("아이디를 입력하세요") ;
@@ -45,6 +46,11 @@
 		if ( com_intro == "") {
 			alert("기업소개를 입력하세요") ;
 			frm.com_intro.focus() ;
+			return ;
+		}
+		if ( com_sal == "") {
+			alert("신입직원 평균연봉을 입력하세요") ;
+			frm.com_sal.focus() ;
 			return ;
 		}
 		frm.action = "companyJoin.do" ;
@@ -134,8 +140,8 @@
               </div>
               
               <div class="form-group">
-                <label for="job-region">신입 평균 초봉</label>
-                <select class="selectpicker border rounded" id="com_sal" name="com_sal" data-style="btn-black" data-width="100%" data-live-search="true" title="신입직원의 평균초봉을 선택하세요">
+                <label for="job-region">*신입 평균 연봉</label>
+                <select class="selectpicker border rounded" id="com_sal" name="com_sal" data-style="btn-black" data-width="100%" data-live-search="true" title="신입직원의 평균연봉을 선택하세요">
                       <option>2,400만원 미만</option>
                       <option>2,400만원 이상 2,500만원 미만</option>
                       <option>2,500만원 이상 2,600만원 미만</option>
