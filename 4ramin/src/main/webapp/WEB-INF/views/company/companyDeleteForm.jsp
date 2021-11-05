@@ -28,7 +28,7 @@
 				return 
 			}
 			if ( id1 != id2 ) {
-				alert("아이디가 일치하지 않습니다")
+				alert("본인의 아이디와 일치하지 않습니다")
 				frm.com_id.focus() ;
 				return
 			}

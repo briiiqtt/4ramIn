@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.yedam.saramin.comm.Command;
+import com.yedam.saramin.command.AdminPage;
 import com.yedam.saramin.command.CompanyDelete;
 import com.yedam.saramin.command.CompanyDeleteForm;
 import com.yedam.saramin.command.CompanyJoin;
@@ -26,6 +27,7 @@ import com.yedam.saramin.command.CompanyUpdate;
 import com.yedam.saramin.command.CompanyUpdateForm;
 import com.yedam.saramin.command.HomeCommand;
 import com.yedam.saramin.command.LoginForm;
+import com.yedam.saramin.command.Logout;
 import com.yedam.saramin.command.UserList;
 import com.yedam.saramin.command.UserOne;
 import com.yedam.saramin.command.UsersJoin;
@@ -57,6 +59,7 @@ public class FrontController extends HttpServlet {
 		// 허재철 command
 		map.put("/loginForm.do", new LoginForm()) ; // 로그인 폼 호출
 		map.put("/companyLogin.do", new CompanyLogin()) ; // 기업 로그인 처리
+		map.put("/logout.do", new Logout()) ; // 로그아웃 (테스트끝)
 		map.put("/companyJoinForm.do", new CompanyJoinForm()) ; // 기업 회원가입 폼 호출 (테스트끝)
 		map.put("/companyJoin.do", new CompanyJoin()) ; // 기업 회원가입 처리 (테스트끝)
 		map.put("/companySelectList.do", new CompanySelectList()) ; // 기업 전체목록 조회 (테스트끝)
@@ -71,6 +74,7 @@ public class FrontController extends HttpServlet {
 		map.put("/companySelect.do", new CompanySelect()) ; // 기업 정보 조회 (테스트끝)
 		map.put("/companyUpdateForm.do", new CompanyUpdateForm()) ; // 기업 정보 수정 폼 호출 (테스트끝)
 		map.put("/companyUpdate.do", new CompanyUpdate()) ; // 기업 정보 수정 처리 (테스트끝)
+		map.put("/adminPage.do", new AdminPage()) ; // 어드민페이지 호출
 		
 		// 승근씨 command
 		map.put("/resumeForm.do", new ResumeForm());
