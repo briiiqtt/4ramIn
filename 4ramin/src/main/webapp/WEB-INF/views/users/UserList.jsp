@@ -6,6 +6,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
+<script src="js/jquery.min.js"></script>
 <style>
 body {
 	font-family: Arial, Helvetica, sans-serif;
@@ -97,13 +98,67 @@ to {
 	background-color: #5cb85c;
 	color: white;
 }
+/* 체크박스 */
 </style>
 <title>개인회원목록</title>
+<script type="text/javascript">
+
+
+//ModalDelivery 에 담긴값을 가져와서 frm.uid 한테 값을 넘기고,전송한다
+function ModalDelivery(v) {
+	 $.ajax({
+		 url : 'UserOne.do?uid=' + v,
+		 type : 'get',
+		 dataType : 'json',
+		 success : function(str) {
+				$('#one').empty();
+			for (let data in str ){
+				$('#one').append(
+					$('<td />').html(str[data]),	
+				);
+	
+			}
+		},
+		error : function () {
+			alert('실패');
+		}
+	 });
+
+}
+
+function DeleteFunction() {
+	 var cnt = $("input[name='reportChkBxRow']:checked").length;
+     var arr = new Array();
+     $("input[name='reportChkBxRow']:checked").each(function() {
+         arr.push($(this).attr('id'));
+     })x;
+     if(cnt == 0){
+         alert("선택된 글이 없습니다.");
+     }
+     else{
+         $.ajax = {
+             type: "get"
+             url: "UserDeleto.do"
+             data: "arr=" + arr + "&CNT=" + cnt,
+             dataType:"json",
+             success: function(jdata){
+                 if(jdata != 1) {
+                     alert("삭제 오류");
+                 }
+                 else{
+                     alert("삭제 성공");
+                 }
+             },
+             error: function(){alert("서버통신 오류");}
+         };
+     }
+ }
+</script>
 </head>
 <body>
-	<div align="center">
+	<div>
 		<div>
-			<div>
+			<div align="center">
 				<table id="myBtn">
 					<tr align="center">
 						<th width="100">아이디</th>
@@ -118,27 +173,32 @@ to {
 					<c:forEach items="${users }" var="user">
 						<tr onmouseover='this.style.background="#fcecae";'
 							onmouseleave='this.style.background="#FFFFFF";'
-							onclick="ModalDelivery('${user.user_id}')">
+							onclick="ModalDelivery('${user.user_id }')">
+
 							<td align="center">${user.user_id }</td>
 							<td align="center">${user.user_password }</td>
 							<td align="center">${user.user_name }</td>
 							<td align="center">${user.user_phone }</td>
 							<td align="center">${user.user_email }</td>
 							<td align="center">${user.user_auth }</td>
+							<td><input type="checkbox" onclick="event.cancelBubble=true"
+								name="reportChkBxRow" id="'${user.user_id }'"></td>
 						</tr>
 					</c:forEach>
 				</table>
-			</div><br>
-			<div>
-				<form id="frm" action="UserOne.do" method="post">
-					<input type="hidden" id="uid" name="uid">
-				</form>
 			</div>
+			<br>
+			<div align="right">
+				<!-- 어드민만 버튼 보이게.. -->
+				<input type="button" onclick="DeleteFunction()"
+					value="삭제">
+			</div>
+
 		</div>
 	</div>
+
 	<!-- The Modal -->
 	<div id="myModal" class="modal">
-
 		<!-- 모달을 클릭이벤트로 열면 그 클린한 ID 값을 기준으로 단건검색할계획 -->
 		<div class="modal-content">
 			<div class="modal-header">
@@ -148,7 +208,7 @@ to {
 			<div class="modal-body">
 				<form action="">
 					<div>
-						<table border="1">
+						<table>
 							<tr align="center">
 								<th width="200">아이디</th>
 								<th width="200">비밀벙호</th>
@@ -157,59 +217,42 @@ to {
 								<th width="200">이메일</th>
 								<th width="200">권한</th>
 							</tr>
-							<tr>
-								<td align="center">${userone.user_id }</td>
-								<td align="center">${userone.user_password }</td>
-								<td align="center">${userone.user_name }</td>
-								<td align="center">${userone.user_phone }</td>
-								<td align="center">${userone.user_email }</td>
-								<td align="center">${userone.user_auth }</td>
-							</tr>
+							<tr id="one" align="center" />
 						</table>
 					</div>
 				</form>
 			</div>
 			<div class="modal-footer">
-				<h3>Modal Footer</h3>
+				<h2>이력서 출력 해줄 부분</h2>
 			</div>
 		</div>
 	</div>
 	<script>
-	//ModalDelivery 에 담긴값을 가져와서 frm.uid 한테 값을 넘기고,전송한다
-	function ModalDelivery(v) {
-		console.log(v);
-		frm.uid.value = v;
-		frm.submit();
-		
-	}
-	
-	
-// Get the modal
-var modal = document.getElementById("myModal");
+	// Get the modal
+		var modal = document.getElementById("myModal");
 
-// Get the button that opens the modal
-var btn = document.	getElementById("myBtn");
+		// Get the button that opens the modal
+		var btn = document.getElementById("myBtn");
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
+		// When the user clicks the button, open the modal 
+		btn.onclick = function() {
+			modal.style.display = "block";
+		}
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() {
+			modal.style.display = "none";
+		}
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
-
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
+	</script>
 </body>
 </html>
