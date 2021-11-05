@@ -46,6 +46,34 @@
     	}
     	
     </script>
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+    	  console.log('${salary.com_id}');
+        var data = google.visualization.arrayToDataTable([
+          ['연도', '평균연봉 (단위 : 만원)'],
+          ['2019', '${salary.sal_2019}'],
+          ['2020', '${salary.sal_2020}'],
+          ['2021', '${salary.sal_2021}']
+        ]);
+
+        var options = {
+          chart: {
+            title: '연도별 신입직원 평균연봉',
+            subtitle: '평균연봉',
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+    
 </head>
 <body>
   <section class="site-section">
@@ -76,7 +104,7 @@
           <div class="col-lg-8">
             
             <div class="mb-5">
-              <figure class="mb-5"><img src="images/job_single_img_1.jpg" alt="Image" class="img-fluid rounded"></figure>
+              <div id="columnchart_material" style="width: 730px; height: 486px;"></div>
               <!-- 지도 들어갈 자리 크기는 730 X 486 -->
             </div>
 
@@ -91,7 +119,7 @@
                 <li class="mb-2"><strong class="text-black">사업자번호 : </strong>${company.com_reg }</li>
                 <li class="mb-2"><strong class="text-black">주소 : </strong>${company.com_loc }</li>
                 <li class="mb-2"><strong class="text-black">직원수 : </strong>${company.com_imp }</li>
-                <li class="mb-2"><strong class="text-black">신입초봉 : </strong>${company.com_sal }</li>
+                <li class="mb-2"><strong class="text-black">신입평균연봉 : </strong>${company.com_sal }</li>
                 <li class="mb-2"><strong class="text-black">연락처 : </strong>${company.com_phone }</li>
                 <li class="mb-2"><strong class="text-black">이메일 : </strong>${company.com_email }</li>
               </ul>

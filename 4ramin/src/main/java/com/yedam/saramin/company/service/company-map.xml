@@ -8,6 +8,13 @@
 
 	<select id="selectCompany" resultType="com.yedam.saramin.company.service.CompanyVO">
 		select * from company where com_id = #{com_id}
+		<if test="com_pw != null">
+			and com_pw = #{com_pw}
+		</if>
+		<if test="com_reg != null">
+			and com_reg = #{com_reg}
+		</if>
+		
 	</select>
 
 	<insert id="insertCompany" parameterType="com.yedam.saramin.company.service.CompanyVO">
@@ -29,5 +36,13 @@
 	<select id="selectLikeCompany" resultType="com.yedam.saramin.company.service.CompanyVO">
 		select com_like from company where com_id = #{com_id}
 	</select>
+
+	<select id="selectSalCompany" resultType="com.yedam.saramin.company.service.CompanyVO">
+		select * from avgsal where com_id = #{com_id}
+	</select>
+	
+	<insert id="insertSalCompany" parameterType="com.yedam.saramin.company.service.CompanyVO">
+		insert into avgsal values(#{com_id},0,0,#{sal_2021})
+	</insert>
 
 </mapper>
