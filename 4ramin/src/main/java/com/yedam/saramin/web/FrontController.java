@@ -28,6 +28,7 @@ import com.yedam.saramin.command.CompanyUpdateForm;
 import com.yedam.saramin.command.HomeCommand;
 import com.yedam.saramin.command.LoginForm;
 import com.yedam.saramin.command.Logout;
+import com.yedam.saramin.command.UserDeleto;
 import com.yedam.saramin.command.UserList;
 import com.yedam.saramin.command.UserOne;
 import com.yedam.saramin.command.UsersJoin;
@@ -55,7 +56,10 @@ public class FrontController extends HttpServlet {
 		map.put("/UsersJoinForm.do", new UsersJoinForm()); //회원가입 폼
 		map.put("/UsersJoin.do", new UsersJoin()); //회원가입 처리
 		map.put("/UserList.do", new UserList());//회원 리스트 출력
-		map.put("/UserOne.do", new UserOne()); //회원 한건 검색 (구현해야함)
+		map.put("/UserOne.do", new UserOne()); //회원 한건 검색(모달 완성)
+		map.put("/UserDeleto.do", new UserDeleto());//회원 정보 삭제(음..)
+		map.put(getServletInfo(), null); // X
+		
 		// 허재철 command
 		map.put("/loginForm.do", new LoginForm()) ; // 로그인 폼 호출
 		map.put("/companyLogin.do", new CompanyLogin()) ; // 기업 로그인 처리
