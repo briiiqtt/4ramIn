@@ -9,7 +9,7 @@ public class AdtInsertForm implements Command {
 
 	@Override
 	public String run(HttpServletRequest request, HttpServletResponse response) {
-		return "adoptions/adoptionInsertForm";
+		return "adoptions/adtInsertForm";
 	}
 
 }
