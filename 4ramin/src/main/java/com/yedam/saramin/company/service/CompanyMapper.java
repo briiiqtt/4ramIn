@@ -10,4 +10,6 @@ public interface CompanyMapper {
 	int deleteCompany(CompanyVO vo) ;
 	int likeCompany(CompanyVO vo) ;
 	CompanyVO selectLikeCompany(CompanyVO vo) ;
+	CompanyVO selectSalCompany(CompanyVO vo) ;
+	int insertSalCompany(CompanyVO vo) ;
 }
