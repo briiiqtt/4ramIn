@@ -7,7 +7,14 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<script>
+function adtSelectFnc(idx){
+	document.adtSelect.adt_idx.value=idx;
+	document.adtSelect.submit();
+}
+</script>
 <body>
+<form name="adtSelect" action="adtSelect.do" method="post"><input name="adt_idx" type="hidden"></form>
 		<section class="site-section">
 			<div class="container">
 
@@ -20,9 +27,7 @@
 				<ul class="job-listings mb-5">
 				
 				<c:forEach items="${adoptions }" var="adt">
-					<li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
-						<a href="#"></a>
-						<!--여기에 공고 링크-->
+					<li onclick="adtSelectFnc(${adt.adt_idx})" class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
 						<div class="job-listing-logo">
 							<img src="images/job_logo_1.jpg" alt="Free Website Template by Free-Template.co"
 								class="img-fluid">
@@ -31,15 +36,15 @@
 						<div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
 							<div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
 								<h2>${adt.title }</h2>
-								<strong>${adt.body }</strong>
+								<strong>${adt.career }</strong>
 							</div>
 							<div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
 								<span class="icon-room"></span> 위치
 							</div>
-							<div class="job-listing-meta">
-								<span class="badge badge-danger">D-10</span><br>
-								<span class="badge badge-primary">연봉 몇천</span><br>
-								<span class="badge badge-secondary">신입/경력</span>
+							<div class="job-listing-meta" align="right">
+								<span class="badge badge-danger">D-101</span><br>
+								<span class="badge badge-primary">${adt.sal_type } ${adt.sal_howmuch }원</span><br>
+								<span class="badge badge-secondary">${adt.career }</span>
 							</div>
 						</div>
 						</li>
@@ -51,7 +56,7 @@
 
 				<div class="row pagination-wrap">
 					<div class="col-md-6 text-center text-md-left mb-4 mb-md-0">
-						<span>00개 결과 중 00개 표시</span>
+						<span>${cnt }개 결과 중 00개 표시</span>
 					</div>
 					<div class="col-md-6 text-center text-md-right">
 						<div class="custom-pagination ml-auto">
@@ -70,4 +75,9 @@
 			</div>
 		</section>
 </body>
+<script type="text/javascript">
+
+console.log(${adt.title});
+console.log(${adt.salType});
+</script>
 </html>

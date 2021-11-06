@@ -1,8 +1,5 @@
 package com.yedam.saramin.command.adt;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,18 +8,15 @@ import com.yedam.saramin.adoptions.service.AdoptionService;
 import com.yedam.saramin.adoptions.service.impl.AdoptionServiceImpl;
 import com.yedam.saramin.comm.Command;
 
-public class AdtSelectAll implements Command {
+public class AdtSelect implements Command {
 
 	@Override
 	public String run(HttpServletRequest request, HttpServletResponse response) {
-		AdoptionService adtDao = new AdoptionServiceImpl();
-		List<Adoption> list = new ArrayList<Adoption>();
-		list = adtDao.selectAdoptionAll();
-		
-		request.setAttribute("adoptions", list);
-		request.setAttribute("pageName", "채용공고");
-		request.setAttribute("cnt", list.size());
-		return "adoptions/adtSelectAll";
+		AdoptionService adtDAO = new AdoptionServiceImpl();
+		Adoption adt = new Adoption();
+		adt.setAdt_idx(Integer.parseInt(request.getParameter("adt_idx")));
+		request.setAttribute("adt",  adtDAO.selectAdoption(adt));
+		return "adoptions/adtSelect";
 	}
 
 }
