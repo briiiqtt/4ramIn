@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>4RAMIN</title>
 	<link rel="stylesheet" href="css/custom-bs.css">
 	<link rel="stylesheet" href="css/jquery.fancybox.min.css">
 	<link rel="stylesheet" href="css/bootstrap-select.min.css">

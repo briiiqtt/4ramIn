@@ -5,22 +5,23 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.yedam.saramin.comm.Command;
 import com.yedam.saramin.company.service.CompanyService;
+import com.yedam.saramin.company.service.CompanyVO;
 import com.yedam.saramin.company.serviceImpl.CompanyServiceImpl;
-import com.yedam.saramin.users.service.UsersService;
-import com.yedam.saramin.users.serviceImpl.UsersServiceImpl;
 
-public class AdminPage implements Command {
+public class ComBookMarkDelete implements Command {
 
 	@Override
 	public String run(HttpServletRequest request, HttpServletResponse response) {
-		// 어드민 페이지 호출
+		// 기업북마크 삭제
 		CompanyService companyDao = new CompanyServiceImpl() ;
-		UsersService usersDao = new UsersServiceImpl() ;
+		CompanyVO vo = new CompanyVO() ;
+		vo.setCom_id(request.getParameter("com_id")) ;
 		
-		request.setAttribute("companies", companyDao.selectCompanyList()) ;
-		request.setAttribute("users", usersDao.usersSelectList()) ;
+		companyDao.deleteComBookMark(vo) ;
 		
-		return "home/adminPage" ;
+		String viewPage = "bookMarkForm.do" ;
+		
+		return viewPage ;
 	}
 
 }

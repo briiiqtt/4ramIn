@@ -1,5 +1,7 @@
 package com.yedam.saramin.company.service;
 
+import java.sql.Date;
+
 public class CompanyVO {
 	private String com_id ;
 	private String com_pw ;
@@ -16,6 +18,9 @@ public class CompanyVO {
 	private String sal_2019 ;
 	private String sal_2020 ;
 	private String sal_2021 ;
+	private String com_branch ;
+	private String user_id ;
+	private Date marked_date ;
 	
 	public CompanyVO () {}
 
@@ -131,12 +136,36 @@ public class CompanyVO {
 		this.sal_2020 = sal_2020;
 	}
 
+	public String getCom_branch() {
+		return com_branch;
+	}
+
+	public void setCom_branch(String com_branch) {
+		this.com_branch = com_branch;
+	}
+
 	public String getSal_2021() {
 		return sal_2021;
 	}
 
 	public void setSal_2021(String sal_2021) {
 		this.sal_2021 = sal_2021;
+	}
+
+	public String getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
+
+	public Date getMarked_date() {
+		return marked_date;
+	}
+
+	public void setMarked_date(Date marked_date) {
+		this.marked_date = marked_date;
 	}
 	
 	

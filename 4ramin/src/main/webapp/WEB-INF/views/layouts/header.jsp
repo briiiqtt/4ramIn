@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>4RAMIN</title>
 	<script type="text/javascript">
 		function move(m) {
 			location.href = m ;
@@ -61,13 +61,12 @@
 								<a href="javascript:void(0)">기업</a>
 								<ul class="dropdown">
 									<li><a href="companySelectList.do">기업 목록</a></li>
+									<c:if test="${not empty com_reg}">
 									<li><a href="companyMyInfo.do">기업 나의 정보</a></li>
 									<li><a href="companyUpdateForm.do">기업 정보 수정 / 탈퇴</a></li>
+									</c:if>
 								</ul>
 							</li>
-							
-							<li class="d-lg-none"><a href="loginForm.do">로그인</a></li>
-							<li class="d-lg-none"><a href="logout.do">로그아웃</a></li>
 						</ul>
 					</nav>
 
@@ -85,11 +84,18 @@
 								</a>
 							</c:if>
 							<c:if test="${not empty id}">
-								<c:if test="${id == 'admin' }">
-										<a href="#" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block">
+								<c:if test="${empty com_reg }">
+									<c:if test="${id != 'admin' }">
+										<a href="bookMarkForm.do" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block">
+											<span class="mr-2 icon-add"></span>즐겨찾기
+										</a>
+									</c:if>
+									<c:if test="${id == 'admin' }">
+										<a href="adminPage.do" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block">
 											<span class="mr-2 icon-add"></span>관리자페이지
 										</a>
 									</c:if>
+								</c:if>
 								<a href="logout.do" class="btn btn-primary border-width-2 d-none d-lg-inline-block">
 								<span class="mr-2 icon-lock_outline"></span>로그아웃</a>
 							</c:if>
