@@ -85,7 +85,7 @@
           <div class="col-lg-8 mb-4 mb-lg-0">
             <div class="d-flex align-items-center">
               <div>
-                <h2>채용공고 등록</h2>
+                <h2>채용공1고 등록</h2>
               </div>
             </div>
           </div>
@@ -102,7 +102,7 @@
         </div>
         <div class="row mb-5">
           <div class="col-lg-12">
-            <form name="adtInsertFrm" action="adtInsertFormSubmit.do" class="p-4 p-md-5 border rounded" method="post">
+            <form name="adtInsertFrm" action="adtInsertFormSubmit.do" class="p-4 p-md-5 border rounded" method="post" enctype="multipart/form-data">
             <input type="hidden" name="contents" id="contents">
             <input type="hidden" name="comId" id="comId">
               <h3 class="text-black mb-5 border-bottom pb-2">공고 상세</h3>
@@ -110,7 +110,7 @@
               <div class="form-group">
                 <label for="company-website-tw d-block">대표 이미지 설정</label> <br>
                 <label class="btn btn-primary btn-md btn-file">
-                  파일 선택<input type="file" name="imgSrc">
+                  파일 선택<input type="file" name="imgSrc" multiple>
                 </label>
               </div>
 

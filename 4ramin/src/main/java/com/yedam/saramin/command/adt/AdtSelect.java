@@ -15,7 +15,8 @@ public class AdtSelect implements Command {
 		AdoptionService adtDAO = new AdoptionServiceImpl();
 		Adoption adt = new Adoption();
 		adt.setAdt_idx(Integer.parseInt(request.getParameter("adt_idx")));
-		request.setAttribute("adt",  adtDAO.selectAdoption(adt));
+		request.setAttribute("pageName","채용공고");
+		request.setAttribute("adt",  adtDAO.selectAdoptionByAdtIdx(adt));
 		return "adoptions/adtSelect";
 	}
 

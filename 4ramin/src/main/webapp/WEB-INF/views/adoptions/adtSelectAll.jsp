@@ -29,14 +29,14 @@ function adtSelectFnc(idx){
 				<c:forEach items="${adoptions }" var="adt">
 					<li onclick="adtSelectFnc(${adt.adt_idx})" class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
 						<div class="job-listing-logo">
-							<img src="images/job_logo_1.jpg" alt="Free Website Template by Free-Template.co"
+							<img src="images/job_logo_1.jpg" alt="이미지를 로드할 수 없습니다."
 								class="img-fluid">
 						</div>
 
 						<div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
 							<div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
 								<h2>${adt.title }</h2>
-								<strong>${adt.career }</strong>
+								<strong>${adt.com_id }</strong>
 							</div>
 							<div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
 								<span class="icon-room"></span> 위치

@@ -21,6 +21,11 @@
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">    
+    <style>
+    .strong1{
+    color:black;
+    }
+    </style>
   </head>
   <body id="top">
 
@@ -70,14 +75,23 @@
             <div class="mb-4">
               <h3 class="mb-4 h4 border-bottom">${adt.title }</h3>
               
-              <p class="mb-0">본문</p>
+              <p class="mb-0">${adt.body }</p>
             </div>
 
             <div class="row mb-4">
 
               <div class="col-sm-12 col-md-12 mb-4 col-lg-12">
-                <strong class="d-block text-black">영역1</strong>
-                영역1-1
+                인사담당자: <strong class="strong1">하드코딩</strong><br>
+                EMAIL: <strong class="strong1">${adt.adt_email }</strong>
+              </div>
+              
+              <div class="col-sm-12 col-md-12 mb-4 col-lg-12">
+                요구 경력: <strong class="strong1">${adt.career }</strong><br>
+              </div>
+              
+              <div class="col-sm-12 col-md-12 mb-4 col-lg-12">
+                급여 형태: <strong class="strong1">${adt.sal_type }</strong><br>
+                급여액: <strong class="strong1">${adt.sal_howmuch }원</strong>
               </div>
                 <a href="#" class="btn btn-outline-primary border-width-2">Visit Website</a>
               </div>
@@ -109,13 +123,10 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4 text-center">
-            <a href="#" class="btn btn-md btn-outline-primary border-width-2 d-block">Previous Project</a>
+            <a href="#" class="btn btn-md btn-outline-primary border-width-2 d-block">내 이력서 확인</a>
           </div>
           <div class="col-md-4 text-center">
-            <a href="#" class="btn btn-md btn-primary border-width-2 d-block">All Projects</a>
-          </div>
-          <div class="col-md-4 text-center">
-            <a href="#" class="btn btn-md btn-outline-primary border-width-2 d-block">Next Project</a>
+            <a href="#" class="btn btn-md btn-primary border-width-2 d-block">이 공고에 입사지원</a>
           </div>
         </div>
       </div>

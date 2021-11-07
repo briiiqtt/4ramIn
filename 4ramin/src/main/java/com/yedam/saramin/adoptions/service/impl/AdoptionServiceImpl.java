@@ -19,10 +19,10 @@ public class AdoptionServiceImpl implements AdoptionService {
 	}
 
 	@Override
-	public Adoption selectAdoption(Adoption adt) {
-		return map.selectAdoption(adt);
+	public Adoption selectAdoptionByComId(Adoption adt) {
+		return map.selectAdoptionByComId(adt);
 	}
-
+	
 	@Override
 	public int updateAdoption(Adoption adt) {
 		return map.updateAdoption(adt);
@@ -36,6 +36,11 @@ public class AdoptionServiceImpl implements AdoptionService {
 	@Override
 	public int deleteAdoption(Adoption adt) {
 		return map.deleteAdoption(adt);
+	}
+
+	@Override
+	public Adoption selectAdoptionByAdtIdx(Adoption adt) {
+		return map.selectAdoptionByAdtIdx(adt);
 	}
 
 }
