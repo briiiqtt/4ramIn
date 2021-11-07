@@ -11,6 +11,7 @@ public class Adoption {
 	private String adt_imgsrc;
 	private String sal_type;
 	private String sal_howmuch;
+	private String adt_address;
 	
 	
 	public int getAdt_idx() {
@@ -73,5 +74,12 @@ public class Adoption {
 	public void setSal_howmuch(String sal_howmuch) {
 		this.sal_howmuch = sal_howmuch;
 	}
-
+	public String getAdt_address() {
+		return adt_address;
+	}
+	public void setAdt_address(String adt_address) {
+		this.adt_address = adt_address;
+	}
+	
+	
 }
