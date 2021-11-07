@@ -85,7 +85,7 @@
           <div class="col-lg-8 mb-4 mb-lg-0">
             <div class="d-flex align-items-center">
               <div>
-                <h2>채용공1고 등록</h2>
+                <h2>채용공고 등록</h2>
               </div>
             </div>
           </div>
