@@ -7,6 +7,16 @@
 <meta charset="UTF-8">
 <title>내정보 보기</title>
 <script type="text/javascript">
+	window.onload = function() {
+		var resule = "";
+		ajax({
+			type : "post",
+			url : "이력서 셀렉트 할 do",
+			async : false,
+
+		})
+	}
+
 	function Editfunction() {
 		frm2.action = "UserEdit.do";
 		frm2.submit();
@@ -37,7 +47,7 @@
 	<br>
 	<div>
 		<form id="frm" action="" method="post">
-			<div >
+			<div class="col-lg-4" align="center">
 				<div class="bg-light p-3 border rounded mb-4">
 					<h3 class="text-primary  mt-3 h5 pl-3 mb-3 ">개인정보 페이지 입니다.</h3>
 					<ul class="list-unstyled pl-3 mb-0">
@@ -51,33 +61,36 @@
 							${user.user_email }</li>
 						<li class="mb-2"><strong class="text-black">연락처 :</strong>
 							${user.user_phone }</li>
-						<div align="center">
+						<%-- <div align="center">
 							<input
 								onclick="document.getElementById('id01').style.display='block'"
 								class="w3-button w3-gray" value="수정하기"> <input
 								type="hidden" name="user_id" value="${user.user_id }">
-						</div>
+						</div> --%>
 					</ul>
-					<div align="right">
+					<div align="center">
+						<input
+							onclick="document.getElementById('id01').style.display='block'"
+							class="w3-button w3-gray" value="수정하기"> <input
+							type="hidden" name="user_id" value="${user.user_id }">
+					</div>
+				</div>
+			</div>
+			<div align="center">
 				<section class="block__62849" id="next-section">
 					<div>
 						<div class="col-6 col-md-6 ">
-
-							<a href="service-single.html"
-								class="block__16443 text-center d-block"> <span
-								class="custom-icon mx-auto"><span
-									class="icon-magnet d-block"></span></span>
-								<h3>이력서 페이지</h3>
-								<p>현재 이력서가 없습니다.</p>
-							</a>
+							<div class="block__16443 text-center d-block">
+								<a href=""> <span class="custom-icon mx-auto"><span
+										class="icon-magnet d-block"></span></span>
+								</a>
+								<h3>이력서Box</h3>
+								<p id="ptag">이력서가없습니다.</p>
+							</div>
 						</div>
 					</div>
 				</section>
-				</div>
-				
 			</div>
-			</div>
-			
 		</form>
 	</div>
 	<br>
@@ -140,6 +153,6 @@
 				</footer>
 			</div>
 		</div>
-		</div>
+	</div>
 </body>
 </html>

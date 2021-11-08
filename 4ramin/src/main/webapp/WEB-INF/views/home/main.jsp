@@ -87,14 +87,14 @@
 									<li><a href="resumeForm.do">내 이력서</a></li>
 
 									<li><a href="resumeListHome.do">이력서 관리</a></li>
+								</ul></li>
+
+							<li class="has-children">
+								<ul class="dropdown">
+									<a href="javascript:void(0)">기업</a>
+									<li><a href="#">이력서 관리</a></li>
 								</ul>
 							</li>
-							
-							<li class="has-children">
-								<a href="javascript:void(0)">기업</a>
-
-									<li><a href="#">이력서 관리</a></li>
-								</ul></li>
 
 							<li class="has-children"><a href="javascript:void(0)">기업</a>
 
