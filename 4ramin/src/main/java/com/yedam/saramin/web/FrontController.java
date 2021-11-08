@@ -46,6 +46,7 @@ import com.yedam.saramin.command.adt.AdtInsertFormSubmit;
 import com.yedam.saramin.command.adt.AdtSelect;
 import com.yedam.saramin.command.adt.AdtSelectAll;
 import com.yedam.saramin.resume.ResumeForm;
+import com.yedam.saramin.command.UserDelete;
 import com.yedam.saramin.command.UserEdit;
 
 
@@ -74,6 +75,7 @@ public class FrontController extends HttpServlet {
 		map.put("/UserDeleto.do", new UserDeleto());//회원 정보 삭제(음..)
 		map.put("/UserSelect.do", new UserSelect()); //내정보보기
 		map.put("/UserEdit.do", new UserEdit()); //개인정보 수정 처리
+		map.put("/UserDelete.do", new UserDelete());
 		
 		// 허재철 command
 		map.put("/loginForm.do", new LoginForm()) ; // 로그인 폼 호출 (테스트끝)
