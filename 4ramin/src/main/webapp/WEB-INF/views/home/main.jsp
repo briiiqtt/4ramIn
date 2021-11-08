@@ -83,7 +83,7 @@
 								<ul class="dropdown">
 
 									<li><a href="resumeForm.do">내 이력서</a></li>
-									<li><a href="#">이력서 관리</a></li>
+									<li><a href="resumeListHome.do">이력서 관리</a></li>
 								</ul>
 							</li>
 							

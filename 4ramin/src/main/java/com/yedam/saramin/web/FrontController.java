@@ -32,7 +32,14 @@ import com.yedam.saramin.command.UsersJoin;
 import com.yedam.saramin.command.UsersJoinForm;
 import com.yedam.saramin.command.adt.AdtInsertForm;
 import com.yedam.saramin.command.adt.AdtSelectAll;
+import com.yedam.saramin.resume.ResumeDelete;
+
 import com.yedam.saramin.resume.ResumeForm;
+import com.yedam.saramin.resume.ResumeJoin;
+import com.yedam.saramin.resume.ResumeList;
+import com.yedam.saramin.resume.ResumeListHome;
+import com.yedam.saramin.resume.ResumeUpdate;
+import com.yedam.saramin.resume.ResumeUpdateForm;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -72,8 +79,14 @@ public class FrontController extends HttpServlet {
 		map.put("/companyUpdateForm.do", new CompanyUpdateForm()) ; // 기업 정보 수정 폼 호출 (테스트끝)
 		map.put("/companyUpdate.do", new CompanyUpdate()) ; // 기업 정보 수정 처리 (테스트끝)
 		
-		// 승근씨 command
+		// 강승근 command
 		map.put("/resumeForm.do", new ResumeForm());
+		map.put("/resumeUpdate.do", new ResumeUpdate()); //해결못함 Update
+		map.put("/resumeList.do", new ResumeList());
+		map.put("/resumeJoin.do", new ResumeJoin());
+		map.put("/resumeDelete.do", new ResumeDelete());
+		map.put("/resumeListHome.do", new ResumeListHome());
+		map.put("/resumeUpdateForm", new ResumeUpdateForm()); //해결못함 Update
 	}
 
 	
