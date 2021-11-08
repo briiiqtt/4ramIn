@@ -22,19 +22,13 @@ public class CompanyLogin implements Command {
 		vo.setCom_pw(request.getParameter("com_pw")) ;
 		vo.setCom_reg(request.getParameter("com_reg")) ;
 		vo = companyDao.selectCompany(vo) ;
-		String viewPage = null ;
 		
-		if(vo != null) {
-			session.setAttribute("id", vo.getCom_id()) ;
-			session.setAttribute("name", vo.getCom_name()) ;
-			session.setAttribute("pw", vo.getCom_pw()) ;
-			session.setAttribute("com_reg", vo.getCom_reg()) ;
-			viewPage = "main.do" ;
-		} else {
-			viewPage = "loginForm.do" ;
-		}
+		session.setAttribute("id", vo.getCom_id()) ;
+		session.setAttribute("name", vo.getCom_name()) ;
+		session.setAttribute("pw", vo.getCom_pw()) ;
+		session.setAttribute("com_reg", vo.getCom_reg()) ;
 		
-		return viewPage ;
+		return "ajax:" ;
 	}
 
 }

@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>4RAMIN</title>
     <link rel="stylesheet" href="css/custom-bs.css">
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="css/bootstrap-select.min.css">
@@ -46,6 +47,50 @@
     	}
     	
     </script>
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['연도', '평균연봉 (단위 : 만원)'],
+          ['2019', '${salary.sal_2019}'],
+          ['2020', '${salary.sal_2020}'],
+          ['2021', '${salary.sal_2021}']
+        ]);
+
+        var options = {
+          chart: {
+            title: '연도별 신입직원 평균연봉',
+            subtitle: '평균연봉',
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+      
+      function insertBookmark(com_id,com_name,com_intro,com_sal) {
+    	  $.ajax({
+    		  url : "comBookmarkInsert.do" ,
+    		  type : "get" ,
+    		  data : {
+    			  com_id : com_id ,
+    			  com_name : com_name ,
+    			  com_intro : com_intro ,
+    			  com_sal : com_sal
+    		  } ,
+    		  success : function() {
+    			  alert("기업 즐겨찾기에 추가되었습니다") ;
+    			  return ;
+    		  }
+    	  })
+      }
+    </script>
+    
 </head>
 <body>
   <section class="site-section">
@@ -63,9 +108,13 @@
           </div>
           <div class="col-lg-4">
             <div class="row">
+              <c:if test="${empty com_reg }">
+              <c:if test="${id != 'admin' }">
               <div class="col-6">
-                <a href="#" class="btn btn-block btn-light btn-md">즐겨찾기 추가</a>
+                <a onclick="insertBookmark('${company.com_id}','${company.com_name}','${company.com_intro}','${company.com_sal}')" href="javascript:void(0)" class="btn btn-block btn-light btn-md">기업소식 구독</a>
               </div>
+              </c:if>
+              </c:if>
               <div class="col-6">
                 <a onclick="likeplus()" href="javascript:void(0)" id="like" class="btn btn-block btn-primary btn-md"><span class="icon-heart-o mr-2 text-danger"></span>좋아요 : ${company.com_like }</a>
               </div>
@@ -76,7 +125,7 @@
           <div class="col-lg-8">
             
             <div class="mb-5">
-              <figure class="mb-5"><img src="images/job_single_img_1.jpg" alt="Image" class="img-fluid rounded"></figure>
+              <div id="columnchart_material" style="width: 730px; height: 486px;"></div>
               <!-- 지도 들어갈 자리 크기는 730 X 486 -->
             </div>
 
@@ -91,7 +140,7 @@
                 <li class="mb-2"><strong class="text-black">사업자번호 : </strong>${company.com_reg }</li>
                 <li class="mb-2"><strong class="text-black">주소 : </strong>${company.com_loc }</li>
                 <li class="mb-2"><strong class="text-black">직원수 : </strong>${company.com_imp }</li>
-                <li class="mb-2"><strong class="text-black">신입초봉 : </strong>${company.com_sal }</li>
+                <li class="mb-2"><strong class="text-black">신입평균연봉 : </strong>${company.com_sal }</li>
                 <li class="mb-2"><strong class="text-black">연락처 : </strong>${company.com_phone }</li>
                 <li class="mb-2"><strong class="text-black">이메일 : </strong>${company.com_email }</li>
               </ul>

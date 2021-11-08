@@ -3,6 +3,8 @@ package com.yedam.saramin.command;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.yedam.saramin.comm.Command;
 import com.yedam.saramin.users.service.UsersService;
 import com.yedam.saramin.users.service.UsersVO;
@@ -12,17 +14,20 @@ public class UserOne implements Command {
 
 	@Override
 	public String run(HttpServletRequest request, HttpServletResponse response) {
+		response.setCharacterEncoding("utf-8");
+		response.setContentType("text/html; charset=utf-8");
 		//클릭한id값 받아와서 단건검색
 		UsersService usersDao = new UsersServiceImpl();
 		UsersVO vo = new UsersVO();
+		Gson gson = new GsonBuilder().create();
+		String str = null;
+
 		
-		System.out.println("UserOne: "+request.getParameter("uid"));
 		vo.setUser_id(request.getParameter("uid"));
 		vo = usersDao.userssSelect(vo);
-		request.setAttribute("userone", usersDao.userssSelect(vo));
-		System.out.println(usersDao.userssSelect(vo));
+		str = gson.toJson(usersDao.userssSelect(vo));
 		
-		return "users/UserList";
+		return "ajax:"+str;
 	}
 
 }

@@ -10,4 +10,14 @@ public interface CompanyService {
 	int deleteCompany(CompanyVO vo) ;
 	int likeCompany(CompanyVO vo) ;
 	CompanyVO selectLikeCompany(CompanyVO vo) ;
+	CompanyVO selectSalCompany(CompanyVO vo) ;
+	int insertSalCompany(CompanyVO vo) ;
+	int insertBranchCompany(CompanyVO vo) ;
+	int deleteSalCompany(CompanyVO vo) ;
+	int deleteBranchCompany(CompanyVO vo) ;
+	int updateSalCompany(CompanyVO vo) ;
+	int updateBranchCompany(CompanyVO vo) ;
+	List<CompanyVO> selectComBookMarkList(CompanyVO vo) ;
+	int insertComBookMark(CompanyVO vo) ;
+	int deleteComBookMark(CompanyVO vo) ;	
 }
