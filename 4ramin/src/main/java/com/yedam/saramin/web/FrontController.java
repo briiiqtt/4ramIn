@@ -38,6 +38,7 @@ import com.yedam.saramin.command.UserDeleto;
 import com.yedam.saramin.command.UserList;
 import com.yedam.saramin.command.UserLogin;
 import com.yedam.saramin.command.UserOne;
+import com.yedam.saramin.command.UserSelect;
 import com.yedam.saramin.command.UsersJoin;
 import com.yedam.saramin.command.UsersJoinForm;
 import com.yedam.saramin.command.adt.AdtInsertForm;
@@ -45,6 +46,8 @@ import com.yedam.saramin.command.adt.AdtInsertFormSubmit;
 import com.yedam.saramin.command.adt.AdtSelect;
 import com.yedam.saramin.command.adt.AdtSelectAll;
 import com.yedam.saramin.resume.ResumeForm;
+import com.yedam.saramin.command.UserEdit;
+
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -66,10 +69,11 @@ public class FrontController extends HttpServlet {
 		// 최창인 command
 		map.put("/UsersJoinForm.do", new UsersJoinForm()); //회원가입 폼
 		map.put("/UsersJoin.do", new UsersJoin()); //회원가입 처리
-		map.put("/UserList.do", new UserList());//회원 리스트 출력
-		map.put("/UserOne.do", new UserOne()); //회원 한건 검색(모달 완성)
+		map.put("/UserList.do", new UserList());//기업->회원 리스트 출력
+		map.put("/UserOne.do", new UserOne()); //기업->회원 한건 검색(모달)
 		map.put("/UserDeleto.do", new UserDeleto());//회원 정보 삭제(음..)
-		map.put(getServletInfo(), null); // X
+		map.put("/UserSelect.do", new UserSelect()); //내정보보기
+		map.put("/UserEdit.do", new UserEdit()); //개인정보 수정 처리
 		
 		// 허재철 command
 		map.put("/loginForm.do", new LoginForm()) ; // 로그인 폼 호출 (테스트끝)
