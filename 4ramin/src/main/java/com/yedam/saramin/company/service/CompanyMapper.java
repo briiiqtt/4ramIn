@@ -20,4 +20,7 @@ public interface CompanyMapper {
 	List<CompanyVO> selectComBookMarkList(CompanyVO vo) ;
 	int insertComBookMark(CompanyVO vo) ;
 	int deleteComBookMark(CompanyVO vo) ;	
+	List<CompanyVO> selectAdtBookMarkList(CompanyVO vo) ;
+	int insertAdtBookMark(CompanyVO vo) ;
+	int deleteAdtBookMark(CompanyVO vo) ;
 }

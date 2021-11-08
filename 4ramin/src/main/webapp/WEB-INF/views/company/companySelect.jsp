@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -111,7 +111,7 @@
               <c:if test="${empty com_reg }">
               <c:if test="${id != 'admin' }">
               <div class="col-6">
-                <a onclick="insertBookmark('${company.com_id}','${company.com_name}','${company.com_intro}','${company.com_sal}')" href="javascript:void(0)" class="btn btn-block btn-light btn-md">기업소식 구독</a>
+                <a onclick="insertBookmark('${company.com_id}','${company.com_name}','${company.com_intro}','${company.com_sal}')" href="javascript:void(0)" class="btn btn-block btn-light btn-md">기업 즐겨찾기</a>
               </div>
               </c:if>
               </c:if>
