@@ -21,6 +21,11 @@ public class ResumeServiceImpl implements ResumeService {
 		// TODO Auto-generated method stub
 		return map.resumeSelect(vo);
 	}
+	
+	public ResumeVO resumeSelectID(ResumeVO vo) {
+		// TODO Auto-generated method stub
+		return map.resumeSelect(vo);
+	}
 
 	@Override
 	public int resumeInsert(ResumeVO vo) {

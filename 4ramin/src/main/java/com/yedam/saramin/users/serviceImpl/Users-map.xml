@@ -6,6 +6,7 @@
 		resultType="com.yedam.saramin.users.service.UsersVO">
 		select * from users
 	</select>
+	
 
 	<select id="usersSelect"
 		resultType="com.yedam.saramin.users.service.UsersVO">
