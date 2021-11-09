@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>내 이력서 수정</title>
+<title>Insert title here</title>
 </head>
 <body>
-	수정할거다ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ
+	<div align="center">
+		<div><h1>${message }</h1></div>
+	</div>
 </body>
 </html>
