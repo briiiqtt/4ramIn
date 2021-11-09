@@ -13,6 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.yedam.saramin.comm.Command;
 import com.yedam.saramin.command.AdminPage;
+import com.yedam.saramin.command.AdtBookMarkList;
+import com.yedam.saramin.command.AdtBookmarkDelete;
+import com.yedam.saramin.command.AdtBookmarkInsert;
 import com.yedam.saramin.command.AjaxCompanyList;
 import com.yedam.saramin.command.AjaxUserList;
 import com.yedam.saramin.command.BookMarkForm;
@@ -113,6 +116,9 @@ public class FrontController extends HttpServlet {
 		map.put("/comBookmarkList.do", new ComBookMarkList()) ; // 기업북마크 조회 (테스트끝)
 		map.put("/comBookmarkInsert.do", new ComBookMarkInsert()) ; // 기업북마크 추가 (테스트끝)
 		map.put("/comBookmarkDelete.do", new ComBookMarkDelete()) ; // 기업북마크 삭제 (테스트끝)
+		map.put("/adtBookMarkList.do", new AdtBookMarkList()) ; // 공고북마크 조회 (테스트끝)
+		map.put("/adtBookmarkInsert.do", new AdtBookmarkInsert()) ; // 공고북마크 추가 (테스트끝)
+		map.put("/adtBookmarkDelete.do", new AdtBookmarkDelete()) ; // 공고북마크 삭제 (테스트끝)
 		
 		// 강승근 command
 		map.put("/resumeForm.do", new ResumeForm());

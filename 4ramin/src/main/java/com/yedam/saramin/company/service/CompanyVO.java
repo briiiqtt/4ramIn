@@ -1,7 +1,5 @@
 package com.yedam.saramin.company.service;
 
-import java.sql.Date;
-
 public class CompanyVO {
 	private String com_id ;
 	private String com_pw ;
@@ -20,7 +18,10 @@ public class CompanyVO {
 	private String sal_2021 ;
 	private String com_branch ;
 	private String user_id ;
-	private Date marked_date ;
+	private String marked_date ;
+	private String adt_idx ;
+	private String title ;
+	private String adt_exp ;
 	
 	public CompanyVO () {}
 
@@ -160,12 +161,36 @@ public class CompanyVO {
 		this.user_id = user_id;
 	}
 
-	public Date getMarked_date() {
+	public String getMarked_date() {
 		return marked_date;
 	}
 
-	public void setMarked_date(Date marked_date) {
+	public void setMarked_date(String marked_date) {
 		this.marked_date = marked_date;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getAdt_exp() {
+		return adt_exp;
+	}
+
+	public void setAdt_exp(String adt_exp) {
+		this.adt_exp = adt_exp;
+	}
+
+	public String getAdt_idx() {
+		return adt_idx;
+	}
+
+	public void setAdt_idx(String adt_idx) {
+		this.adt_idx = adt_idx;
 	}
 	
 	
