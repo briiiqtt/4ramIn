@@ -35,6 +35,7 @@ import com.yedam.saramin.command.adt.AdtInsertForm;
 import com.yedam.saramin.command.adt.AdtInsertFormSubmit;
 import com.yedam.saramin.command.adt.AdtSelect;
 import com.yedam.saramin.command.adt.AdtSelectAll;
+import com.yedam.saramin.command.search.SearchInfo;
 import com.yedam.saramin.resume.ResumeForm;
 
 @WebServlet("*.do")
@@ -53,6 +54,7 @@ public class FrontController extends HttpServlet {
 		map.put("/adtInsertForm.do", new AdtInsertForm());
 		map.put("/adtInsertFormSubmit.do", new AdtInsertFormSubmit());
 		map.put("/adtSelect.do", new AdtSelect());
+		map.put("/searchInfo.do", new SearchInfo());
 		
 		// 최창인 command
 		map.put("/UsersJoinForm.do", new UsersJoinForm()); //회원가입 폼
