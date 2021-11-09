@@ -154,7 +154,7 @@ function ModalDelivery(v) {
 							<td align="center">${user.user_phone }</td>
 							<td align="center">${user.user_email }</td>
 							<td align="center">${user.user_auth }</td>
-							<td><input type="checkbox" onclick="event.cancelBubble=true"></td>
+							
 						</tr>
 					</c:forEach>
 				</table>

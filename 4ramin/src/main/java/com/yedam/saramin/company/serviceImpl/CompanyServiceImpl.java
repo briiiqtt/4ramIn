@@ -97,4 +97,19 @@ public class CompanyServiceImpl implements CompanyService {
 	public int deleteComBookMark(CompanyVO vo) {
 		return map.deleteComBookMark(vo) ;
 	}
+
+	@Override
+	public List<CompanyVO> selectAdtBookMarkList(CompanyVO vo) {
+		return map.selectAdtBookMarkList(vo) ;
+	}
+
+	@Override
+	public int insertAdtBookMark(CompanyVO vo) {
+		return map.insertAdtBookMark(vo) ;
+	}
+
+	@Override
+	public int deleteAdtBookMark(CompanyVO vo) {
+		return map.deleteAdtBookMark(vo) ;
+	}
 }

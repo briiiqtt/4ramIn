@@ -29,6 +29,10 @@
 		select * from comBookmark where user_id = #{user_id}
 	</select>
 	
+	<select id="selectAdtBookMarkList" resultType="com.yedam.saramin.company.service.CompanyVO">
+		select c.com_name , a.adt_idx , a.title , a.adt_exp from company c join adtBookmark a on c.com_id = a.com_id where a.user_id = #{user_id}
+	</select>
+	
 	<insert id="insertCompany" parameterType="com.yedam.saramin.company.service.CompanyVO">
 		insert into company values(#{com_id},#{com_pw},#{com_name},#{com_intro},#{com_phone},#{com_email},#{com_loc},#{com_reg},#{com_imp},#{com_man},#{com_sal},0)
 	</insert>
@@ -45,6 +49,10 @@
 		insert into comBookmark values(#{user_id},#{com_id},#{com_name},#{com_intro},#{com_sal},sysdate)
 	</insert>
 	
+	<insert id="insertAdtBookMark" parameterType="com.yedam.saramin.company.service.CompanyVO">
+		insert into adtBookmark values(#{adt_idx},#{user_id},#{com_id},#{title},#{adt_exp})
+	</insert>
+	
 	<delete id="deleteCompany" parameterType="com.yedam.saramin.company.service.CompanyVO">
 		delete from company where com_id = #{com_id} and com_pw = #{com_pw} and com_reg = #{com_reg}
 	</delete>
@@ -59,6 +67,10 @@
 	
 	<delete id="deleteComBookMark" parameterType="com.yedam.saramin.company.service.CompanyVO">
 		delete from comBookmark where com_id = #{com_id}
+	</delete>
+	
+	<delete id="deleteAdtBookMark" parameterType="com.yedam.saramin.company.service.CompanyVO">
+		delete from adtBookmark where title = #{title}
 	</delete>
 
 	<update id="updateCompany" parameterType="com.yedam.saramin.company.service.CompanyVO">

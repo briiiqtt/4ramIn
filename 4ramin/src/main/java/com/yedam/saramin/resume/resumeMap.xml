@@ -11,6 +11,10 @@
 		select * from resumes where rsm_idx = #{rsm_idx}	
 	</select>
 	
+	<select id="resumeSelectID" resultType="com.yedam.saramin.resume.ResumeVO">
+		select * from resumes where user_id = #{user_id}
+	</select>
+	
 	
 	<insert id="resumeInsert" parameterType="com.yedam.saramin.resume.ResumeVO">
 	insert into resumes

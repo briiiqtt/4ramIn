@@ -13,6 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.yedam.saramin.comm.Command;
 import com.yedam.saramin.command.AdminPage;
+import com.yedam.saramin.command.AdtBookMarkList;
+import com.yedam.saramin.command.AdtBookmarkDelete;
+import com.yedam.saramin.command.AdtBookmarkInsert;
 import com.yedam.saramin.command.AjaxCompanyList;
 import com.yedam.saramin.command.AjaxUserList;
 import com.yedam.saramin.command.BookMarkForm;
@@ -34,10 +37,13 @@ import com.yedam.saramin.command.CompanyUpdateForm;
 import com.yedam.saramin.command.HomeCommand;
 import com.yedam.saramin.command.LoginForm;
 import com.yedam.saramin.command.Logout;
+import com.yedam.saramin.command.UserDelete;
 import com.yedam.saramin.command.UserDeleto;
+import com.yedam.saramin.command.UserEdit;
 import com.yedam.saramin.command.UserList;
 import com.yedam.saramin.command.UserLogin;
 import com.yedam.saramin.command.UserOne;
+import com.yedam.saramin.command.UserResume;
 import com.yedam.saramin.command.UserSelect;
 import com.yedam.saramin.command.UsersJoin;
 import com.yedam.saramin.command.UsersJoinForm;
@@ -46,15 +52,12 @@ import com.yedam.saramin.command.adt.AdtInsertFormSubmit;
 import com.yedam.saramin.command.adt.AdtSelect;
 import com.yedam.saramin.command.adt.AdtSelectAll;
 import com.yedam.saramin.resume.ResumeDelete;
-
 import com.yedam.saramin.resume.ResumeForm;
-
 import com.yedam.saramin.resume.ResumeJoin;
 import com.yedam.saramin.resume.ResumeList;
 import com.yedam.saramin.resume.ResumeListHome;
 import com.yedam.saramin.resume.ResumeUpdate;
 import com.yedam.saramin.resume.ResumeUpdateForm;
-import com.yedam.saramin.command.UserEdit;
 
 
 @WebServlet("*.do")
@@ -82,6 +85,8 @@ public class FrontController extends HttpServlet {
 		map.put("/UserDeleto.do", new UserDeleto());//회원 정보 삭제(음..)
 		map.put("/UserSelect.do", new UserSelect()); //내정보보기
 		map.put("/UserEdit.do", new UserEdit()); //개인정보 수정 처리
+		map.put("/UserDelete.do", new UserDelete()); //유저 회원탈퇴
+		map.put("/UserResume.do", new UserResume()); //유저 이력서 조회해서 ajax 넘기기 (미완성)
 		
 		// 허재철 command
 		map.put("/loginForm.do", new LoginForm()) ; // 로그인 폼 호출 (테스트끝)
@@ -108,6 +113,9 @@ public class FrontController extends HttpServlet {
 		map.put("/comBookmarkList.do", new ComBookMarkList()) ; // 기업북마크 조회 (테스트끝)
 		map.put("/comBookmarkInsert.do", new ComBookMarkInsert()) ; // 기업북마크 추가 (테스트끝)
 		map.put("/comBookmarkDelete.do", new ComBookMarkDelete()) ; // 기업북마크 삭제 (테스트끝)
+		map.put("/adtBookMarkList.do", new AdtBookMarkList()) ; // 공고북마크 조회 (테스트끝)
+		map.put("/adtBookmarkInsert.do", new AdtBookmarkInsert()) ; // 공고북마크 추가 (테스트끝)
+		map.put("/adtBookmarkDelete.do", new AdtBookmarkDelete()) ; // 공고북마크 삭제 (테스트끝)
 		
 		// 강승근 command
 		map.put("/resumeForm.do", new ResumeForm());
