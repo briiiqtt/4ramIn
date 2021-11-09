@@ -10,7 +10,6 @@ public class ResumeUpdate implements Command {
 
 	@Override
 	public String run(HttpServletRequest request, HttpServletResponse response) {
-		HttpSession session = request.getSession();
 		ResumeService resumeDao = new ResumeServiceImpl();
 		ResumeVO vo = new ResumeVO();
 		
@@ -30,6 +29,7 @@ public class ResumeUpdate implements Command {
 			viewPage = "resumeUpdateForm.do";
 		}else {
 			request.setAttribute("message", "정보가 수정안됨");
+			viewPage = "main.do";
 		}
 				
 		return viewPage;

@@ -14,6 +14,7 @@ public class ResumeList implements Command {
 		
 		ResumeService resumeDao = new ResumeServiceImpl();
 		ResumeVO vo = new ResumeVO();
+		System.out.println(Integer.valueOf(request.getParameter("rsm_idx")));
 		vo.setRsm_idx(Integer.valueOf(request.getParameter("rsm_idx")));
 		vo = resumeDao.resumeSelect(vo);
 		request.setAttribute("resumes", vo);

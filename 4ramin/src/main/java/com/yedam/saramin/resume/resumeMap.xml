@@ -23,8 +23,8 @@
 	
 	<update id="resumeUpdate" parameterType="com.yedam.saramin.resume.ResumeVO">
 		update resumes 
-		set name=#{rsm_name},education = #{rsm_education},career = #{rsm_career},certificate = #{rsm_certificate},photo = #{rsm_photo},tel = #{rsm_tel},title = #{rsm_title}
-		where id = #{rsm_idx}
+		set rsm_name=#{rsm_name},rsm_education = #{rsm_education},rsm_career = #{rsm_career},rsm_certificate = #{rsm_certificate},rsm_photo = #{rsm_photo},rsm_tel = #{rsm_tel},rsm_title = #{rsm_title}, user_id = #{user_id}
+		where rsm_idx = #{rsm_idx}
 	</update>
 </mapper>	
 	

@@ -7,8 +7,7 @@
 <head>
 <title>4RAMIN</title>
 <meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta name="author" content="Free-Template.co" />
@@ -53,9 +52,7 @@
 		<header class="site-navbar mt-3">
 			<div class="container-fluid">
 				<div class="row align-items-center">
-					<div class="site-logo col-6">
-						<a href="main.do">4RAMIN</a>
-					</div>
+					<div class="site-logo col-6"><a href="main.do">4RAMIN</a></div>
 
 					<nav class="mx-auto site-navigation">
 						<ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
@@ -92,9 +89,10 @@
 							
 							<li class="has-children">
 								<a href="javascript:void(0)">기업</a>
-
+										<ul class = "dropdown">
 									<li><a href="#">이력서 관리</a></li>
-								</ul></li>
+								</ul>
+							</li>
 
 							<li class="has-children"><a href="javascript:void(0)">기업</a>
 

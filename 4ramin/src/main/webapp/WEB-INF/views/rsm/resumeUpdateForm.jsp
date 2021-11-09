@@ -14,7 +14,7 @@
 	type="text/javascript"></script>
 </head>
 <script type="text/javascript">
-	function resumeJoin() {
+	function resumeUpdate() {
 		var rsm_idx = frm.rsm_idx.value;
 		var rsm_name = frm.rsm_name.value;
 		var user_id = frm.user_id.value;
@@ -47,7 +47,7 @@
 			frm.rsm_gender.focus() ;
 			return ;
 		}
-		frm.action = "resumeJoin.do" ;
+		frm.action = "resumeUpdate()" ;
 		frm.submit() ;
 		
 		alert("회원가입이 완료되었습니다. 홈페이지로 이동합니다")
@@ -72,7 +72,7 @@
 			<div class="row mb-5">
 				<div class="col-lg-12">
 				
-					<form id="frm" name="frm" action="resumeJoin.do"
+					<form id="frm" name="frm" action="resumeUpdate.do"
 						class="p-4 p-md-5 border rounded">
 
 						<br>
@@ -145,7 +145,7 @@
 
 						</div>
 						<div class="col-6">
-							<button onclick="resumeJoin()"
+							<button onclick="resumeUpdate()"
 								class="btn btn-block btn-primary btn-md">이력서 등록</button>
 						</div>
 					</form>

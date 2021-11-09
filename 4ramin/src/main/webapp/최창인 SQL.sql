@@ -27,6 +27,8 @@ start with 1
 increment by 1
 minvalue 1 ;
 
+drop table resumes;
+
 select * from resumes;
 
 CREATE TABLE resumes (

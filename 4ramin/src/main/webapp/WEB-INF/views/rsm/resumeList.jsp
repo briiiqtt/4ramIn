@@ -12,7 +12,7 @@
 		if(str == 'E'){
 		frm.action = "resumeDelete.do"
 		}else{
-			frm.action = "resumeUpdate.do"
+			frm.action = "resumeUpdateForm.do"
 		}
 		
 		frm.submit();			
@@ -22,7 +22,7 @@
 </head>
 <body>
 	<div align="center">
-		${resume.rsm_idx } <br>
+
 		<br>
 		<table border="1" width="800">
 			<tr>

@@ -54,7 +54,6 @@ import com.yedam.saramin.resume.ResumeList;
 import com.yedam.saramin.resume.ResumeListHome;
 import com.yedam.saramin.resume.ResumeUpdate;
 import com.yedam.saramin.resume.ResumeUpdateForm;
-
 import com.yedam.saramin.command.UserEdit;
 
 
@@ -117,7 +116,7 @@ public class FrontController extends HttpServlet {
 		map.put("/resumeJoin.do", new ResumeJoin());
 		map.put("/resumeDelete.do", new ResumeDelete());
 		map.put("/resumeListHome.do", new ResumeListHome());
-		map.put("/resumeUpdateForm", new ResumeUpdateForm()); //해결못함 Update
+		map.put("/resumeUpdateForm.do", new ResumeUpdateForm());
 	}
 
 	
