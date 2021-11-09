@@ -1,4 +1,4 @@
--------------------------테이블삭제-------------------------
+-------------------------사용자생성-------------------------
 
 사용자 생성
 cmd -> sqlplus "/as sysdba" -> create user yedam identified by 1234 ; -> grant connect , resource to yedam ;
